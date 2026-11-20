@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hp6vp7u3pggx"
-path="res://.godot/imported/couteau2.png-5a1e5a26de7233a0279a952d2fad9fe6.ctex"
+uid="uid://cdi41vfgtfwfp"
+path="res://.godot/imported/couteau3.png-d5513b772dd4f581ee82d698bcf3be12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/couteau2.png"
-dest_files=["res://.godot/imported/couteau2.png-5a1e5a26de7233a0279a952d2fad9fe6.ctex"]
+source_file="res://asset/couteau3.png"
+dest_files=["res://.godot/imported/couteau3.png-d5513b772dd4f581ee82d698bcf3be12.ctex"]
 
 [params]
 

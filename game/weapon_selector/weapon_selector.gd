@@ -3,8 +3,8 @@ extends Node2D
 
 @export var weapon_array : Array[WeaponResource] =[]
 @export var label : Label
-@export var button_R : Button
-@export var button_L : Button
+@export var button_R : TextureButton
+@export var button_L : TextureButton
 @export var center_Sprite : Sprite2D
 var sprite_tab : Array[Sprite2D] = []
 var current_weapon : WeaponResource
@@ -35,9 +35,9 @@ func select_weapon(is_swiping_right) -> WeaponResource:
 	return weapon_array[current_index]
 		
 func update_img() -> void:
-	button_R.icon = weapon_array[(current_index+1)%weapon_array.size()].texture
+	button_R.texture_normal = weapon_array[(current_index+1)%weapon_array.size()].texture
 	center_Sprite.texture = weapon_array[current_index].texture
-	button_L.icon = weapon_array[(current_index-1)%weapon_array.size()].texture
+	button_L.texture_normal = weapon_array[(current_index-1)%weapon_array.size()].texture
 
 func _on_button_right_pressed() -> void:
 	select_weapon(true)

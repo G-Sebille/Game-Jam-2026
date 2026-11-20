@@ -5,9 +5,9 @@
 [ext_resource type="Resource" uid="uid://dt6skdonigxis" path="res://game/weapon_selector/weapon/knife.tres" id="3_kce7c"]
 [ext_resource type="Resource" uid="uid://bbrk2onk012nf" path="res://game/weapon_selector/weapon/Axe.tres" id="4_fdety"]
 [ext_resource type="Resource" uid="uid://cwrxonuuvkmn4" path="res://game/weapon_selector/weapon/Hammer.tres" id="5_hostu"]
-[ext_resource type="Texture2D" uid="uid://bhjcsnbx11o00" path="res://asset/marteau.png" id="6_thgks"]
+[ext_resource type="Texture2D" uid="uid://bn7mjsp51b7oj" path="res://asset/hammer.png" id="6_thgks"]
 [ext_resource type="Texture2D" uid="uid://ph3jsseksju" path="res://asset/Sprite_axe_presentation.png" id="7_hostu"]
-[ext_resource type="Texture2D" uid="uid://b6qdre1ovg45" path="res://asset/COUTEAU.png" id="7_thgks"]
+[ext_resource type="Texture2D" uid="uid://cdi41vfgtfwfp" path="res://asset/couteau3.png" id="7_thgks"]
 
 [node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label", "button_R", "button_L", "center_Sprite")]
 script = ExtResource("1_50u1q")
@@ -17,29 +17,31 @@ button_R = NodePath("Button_right")
 button_L = NodePath("Button_left")
 center_Sprite = NodePath("Center_sprite")
 
-[node name="Button_right" type="Button" parent="." unique_id=1017787212]
-offset_left = 351.0
-offset_top = 838.00006
-offset_right = 487.0
-offset_bottom = 974.00006
-scale = Vector2(0.918, 0.777)
-icon = ExtResource("6_thgks")
+[node name="Button_right" type="TextureButton" parent="." unique_id=1298625098]
+offset_left = 365.00003
+offset_top = 801.0
+offset_right = 614.4553
+offset_bottom = 1050.6782
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_thgks")
+ignore_texture_size = true
 
 [node name="Label" type="Label" parent="." unique_id=402760763]
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Button_left" type="Button" parent="." unique_id=1914901504]
-offset_left = 74.999985
-offset_top = 824.99994
-offset_right = 218.72554
-offset_bottom = 993.3333
-scale = Vector2(0.774, 0.777)
-icon = ExtResource("7_thgks")
+[node name="Button_left" type="TextureButton" parent="." unique_id=1678040440]
+offset_left = 61.0
+offset_top = 803.0
+offset_right = 321.0
+offset_bottom = 1041.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_thgks")
+ignore_texture_size = true
 
 [node name="Center_sprite" type="Sprite2D" parent="." unique_id=120999433]
-position = Vector2(265.03, 875.386)
-scale = Vector2(0.6638281, 0.65323466)
+position = Vector2(282, 854.00006)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_hostu")
 
 [connection signal="pressed" from="Button_right" to="." method="_on_button_right_pressed"]
