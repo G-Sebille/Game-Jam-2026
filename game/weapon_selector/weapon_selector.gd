@@ -1,5 +1,12 @@
 extends Node2D
 
+class_name Oeuvre
+
+#var tableau = [peinture, couteau]
+#var cadre = [Hache, Alumette, peinture]
+#var ceramique = [Marteau, peinture, alumette] 
+var statue = [ ]
+
 
 @export var weapon_array : Array[WeaponResource] =[]
 @export var label : Label
@@ -37,6 +44,7 @@ func select_weapon(is_swiping_right) -> WeaponResource:
 	else:
 		current_index = (current_index-1)%weapon_array.size()
 	return weapon_array[current_index]
+	Gm.current_index = current_index
 		
 func update_img() -> void:
 	fire_stick.texture = weapon_array[(current_index+3)%weapon_array.size()].texture
@@ -53,3 +61,7 @@ func _on_button_right_pressed() -> void:
 func _on_button_left_pressed() -> void:
 	select_weapon(false)
 	update_img()
+
+
+
+	
