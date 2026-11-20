@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://bt3q6hi6emlq4"]
 
-[ext_resource type="Texture2D" uid="uid://gsjt313c4g1n" path="res://asset/confettis.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset/confettiseul.png" id="1_wtcfe"]
+
+[sub_resource type="Gradient" id="Gradient_1m0bj"]
+offsets = PackedFloat32Array(0, 0.18518518, 0.38271606, 0.6728395, 0.83950615)
+colors = PackedColorArray(1, 0, 0, 1, 0.8816565, 0.61919326, 0, 1, 0.33333334, 1, 0.9764706, 1, 0.72933257, 0.36539465, 0.9722026, 1, 0.9568214, 0.00083420216, 0.9697508, 1)
 
 [node name="Node2D" type="Node2D" unique_id=914959569]
 
-[node name="Impact_projo" type="CPUParticles2D" parent="." unique_id=1400039351]
+[node name="victory_suprise" type="CPUParticles2D" parent="." unique_id=1400039351]
 emitting = false
 amount = 100
 texture = ExtResource("1_wtcfe")
@@ -15,4 +19,9 @@ direction = Vector2(0, 0)
 spread = 180.0
 initial_velocity_min = 178.52
 initial_velocity_max = 666.72
+angular_velocity_min = -142.57
+angular_velocity_max = 199.6
 tangential_accel_min = -35.64
+color_initial_ramp = SubResource("Gradient_1m0bj")
+hue_variation_min = -0.65
+hue_variation_max = 0.04

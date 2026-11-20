@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gsjt313c4g1n"
-path="res://.godot/imported/confettis.png-7a6c22a5656dfa3f8b481764ff0d299b.ctex"
+uid="uid://0mjwcleet7wj"
+path="res://.godot/imported/confettiseul.png-f2428c72b0b4ac545e75f40ec2a4b206.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/confettis.png"
-dest_files=["res://.godot/imported/confettis.png-7a6c22a5656dfa3f8b481764ff0d299b.ctex"]
+source_file="res://asset/confettiseul.png"
+dest_files=["res://.godot/imported/confettiseul.png-f2428c72b0b4ac545e75f40ec2a4b206.ctex"]
 
 [params]
 
