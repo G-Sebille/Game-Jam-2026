@@ -102,9 +102,11 @@ radius = 100.0
 [node name="Node2D" type="Node2D" unique_id=1208064520]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2110654922]
+position = Vector2(273, 475)
 
 [node name="Gmaplay loop" type="Node2D" parent="." unique_id=1902971465 node_paths=PackedStringArray("anim")]
 z_index = 1
+position = Vector2(273, 475)
 script = ExtResource("1_0e48y")
 anim = NodePath("AnimationPlayer")
 
@@ -129,6 +131,7 @@ shape = SubResource("CircleShape2D_pqpsf")
 libraries/ = SubResource("AnimationLibrary_kdubu")
 
 [node name="Table" type="StaticBody2D" parent="." unique_id=498233533]
+position = Vector2(273, 475)
 scale = Vector2(16.210615, 2.3043413)
 
 [node name="Sprite2D" type="Sprite2D" parent="Table" unique_id=565143293]
@@ -139,7 +142,7 @@ texture = ExtResource("2_epypp")
 shape = SubResource("RectangleShape2D_pqpsf")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1426999298]
-position = Vector2(8, -115)
+position = Vector2(281, 360)
 
 [node name="Icon" type="Sprite2D" parent="RigidBody2D" unique_id=1507032461]
 position = Vector2(-8.272742, -15.272735)
@@ -153,7 +156,7 @@ shape = SubResource("RectangleShape2D_kluwg")
 
 [node name="Swipe" type="Node2D" parent="." unique_id=638171467 node_paths=PackedStringArray("swipe_end_above_y")]
 z_index = 2
-position = Vector2(0, 360)
+position = Vector2(273, 835)
 script = ExtResource("4_0hol4")
 swipe_end_above_y = NodePath("Marker2D")
 
@@ -161,12 +164,6 @@ swipe_end_above_y = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Swipe/Swipe Start" unique_id=321458981]
 shape = SubResource("CircleShape2D_kluwg")
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Swipe" unique_id=583417274]
-offset_left = -251.0
-offset_top = -673.0
-offset_right = 249.0
-offset_bottom = -173.0
 
 [node name="Marker2D" type="Marker2D" parent="Swipe" unique_id=1254848548]
 position = Vector2(0, -147)
