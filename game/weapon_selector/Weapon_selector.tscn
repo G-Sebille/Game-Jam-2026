@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://digvt7e3rpcyy"]
+
+[ext_resource type="Script" uid="uid://b3cf3sk7w3o37" path="res://game/weapon_selector/weapon_selector.gd" id="1_50u1q"]
+[ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="2_to571"]
+
+[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label")]
+script = ExtResource("1_50u1q")
+weapon_array = Array[ExtResource("2_to571")]([null])
+label = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=144835005]
+
+[node name="Button" type="Button" parent="." unique_id=1017787212]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="." unique_id=402760763]
+offset_right = 40.0
+offset_bottom = 23.0
