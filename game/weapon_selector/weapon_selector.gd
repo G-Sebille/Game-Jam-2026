@@ -1,18 +1,19 @@
 extends Node2D
 
+
 @export var weapon_array : Array[WeaponResource] =[]
-
 @export var label : Label
+@export var button_R : Button
+@export var button_L : Button
+@export var center_Sprite : Sprite2D
+var sprite_tab : Array[Sprite2D] = []
+var current_weapon : WeaponResource
+var current_index : int =0
+var is_swipping_right : bool = false
 
-var current_weapon : WeaponRessource
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	#create_weapon()
 	pass
 
 func create_weapon() -> void:
@@ -21,3 +22,27 @@ func create_weapon() -> void:
 		self.add_child(new_sprite)
 		new_sprite.texture = weapon.texture
 		label.text = weapon.name
+		current_weapon = weapon_array[current_index+1]
+		sprite_tab.append(new_sprite)
+		
+	current_index = int(weapon_array.size()/2)
+
+func select_weapon(is_swiping_right) -> WeaponResource:
+	if is_swiping_right == true:
+		current_index = (current_index+1)%weapon_array.size()
+	else:
+		current_index = (current_index-1)%weapon_array.size()
+	return weapon_array[current_index]
+		
+func update_img() -> void:
+	button_R.icon = weapon_array[(current_index+1)%weapon_array.size()].texture
+	center_Sprite.texture = weapon_array[current_index].texture
+	button_L.icon = weapon_array[(current_index-1)%weapon_array.size()].texture
+
+func _on_button_right_pressed() -> void:
+	select_weapon(true)
+	update_img()
+
+func _on_button_left_pressed() -> void:
+	select_weapon(false)
+	update_img()

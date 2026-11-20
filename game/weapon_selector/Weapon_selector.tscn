@@ -2,18 +2,45 @@
 
 [ext_resource type="Script" uid="uid://b3cf3sk7w3o37" path="res://game/weapon_selector/weapon_selector.gd" id="1_50u1q"]
 [ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="2_to571"]
+[ext_resource type="Resource" uid="uid://dt6skdonigxis" path="res://game/weapon_selector/weapon/knife.tres" id="3_kce7c"]
+[ext_resource type="Resource" uid="uid://bbrk2onk012nf" path="res://game/weapon_selector/weapon/Axe.tres" id="4_fdety"]
+[ext_resource type="Resource" uid="uid://cwrxonuuvkmn4" path="res://game/weapon_selector/weapon/Hammer.tres" id="5_hostu"]
+[ext_resource type="Texture2D" uid="uid://bhjcsnbx11o00" path="res://asset/marteau.png" id="6_thgks"]
+[ext_resource type="Texture2D" uid="uid://d3c3njpfjqaaf" path="res://asset/hach.png" id="7_hostu"]
+[ext_resource type="Texture2D" uid="uid://b6qdre1ovg45" path="res://asset/COUTEAU.png" id="7_thgks"]
 
-[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label")]
+[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label", "button_R", "button_L", "center_Sprite")]
 script = ExtResource("1_50u1q")
-weapon_array = Array[ExtResource("2_to571")]([null])
+weapon_array = Array[ExtResource("2_to571")]([ExtResource("3_kce7c"), ExtResource("4_fdety"), ExtResource("5_hostu")])
 label = NodePath("Label")
+button_R = NodePath("Button_right")
+button_L = NodePath("Button_left")
+center_Sprite = NodePath("Center_sprite")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=144835005]
-
-[node name="Button" type="Button" parent="." unique_id=1017787212]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Button_right" type="Button" parent="." unique_id=1017787212]
+offset_left = 359.0
+offset_top = 837.00006
+offset_right = 495.0
+offset_bottom = 973.00006
+scale = Vector2(0.91589975, 0.77565897)
+icon = ExtResource("6_thgks")
 
 [node name="Label" type="Label" parent="." unique_id=402760763]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Button_left" type="Button" parent="." unique_id=1914901504]
+offset_left = 81.99999
+offset_top = 834.0
+offset_right = 225.72556
+offset_bottom = 1002.3334
+scale = Vector2(0.5983626, 0.60000014)
+icon = ExtResource("7_thgks")
+
+[node name="Center_sprite" type="Sprite2D" parent="." unique_id=120999433]
+position = Vector2(258, 882)
+scale = Vector2(1.1274683, 1.1690246)
+texture = ExtResource("7_hostu")
+
+[connection signal="pressed" from="Button_right" to="." method="_on_button_right_pressed"]
+[connection signal="pressed" from="Button_left" to="." method="_on_button_left_pressed"]
