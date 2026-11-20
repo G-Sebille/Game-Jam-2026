@@ -16,8 +16,9 @@ lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.32
-direction = Vector2(0, 0)
+direction = Vector2(0, 1)
 spread = 180.0
+gravity = Vector2(0, 600)
 initial_velocity_min = 178.52
 initial_velocity_max = 666.72
 angular_velocity_min = -142.57
@@ -26,3 +27,15 @@ tangential_accel_min = -35.64
 color_initial_ramp = SubResource("Gradient_1m0bj")
 hue_variation_min = -0.65
 hue_variation_max = 0.04
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=796463617]
+position = Vector2(258, -27)
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.2
+direction = Vector2(0, 0)
+spread = 135.0
+initial_velocity_max = 138.62
