@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://x4b4dtw43ldp"]
+[gd_scene format=3 uid="uid://c6ma2ho5rj1t6"]
 
-[ext_resource type="Script" uid="uid://drc3qire5tqsw" path="res://game/statue/damage_cell.gd" id="1_nk3mm"]
-[ext_resource type="Texture2D" uid="uid://bs5ptslwcyfsi" path="res://icon.svg" id="2_cjkke"]
+[ext_resource type="Script" uid="uid://bhh5p0rdvy1gb" path="res://game/breaker/damage_cell.gd" id="1_i3nfe"]
+[ext_resource type="Texture2D" uid="uid://bs5ptslwcyfsi" path="res://icon.svg" id="2_irwl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5jfn"]
 
 [node name="DamageCell" type="Node2D" unique_id=639076399 node_paths=PackedStringArray("collision_shape", "rigid_body", "sprite_2d")]
-script = ExtResource("1_nk3mm")
+script = ExtResource("1_i3nfe")
 collision_shape = NodePath("RigidBody2D/CollisionShape2D")
 rigid_body = NodePath("RigidBody2D")
 sprite_2d = NodePath("RigidBody2D/Sprite2D")
@@ -16,7 +16,7 @@ mass = 0.1
 continuous_cd = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=390264994]
-texture = ExtResource("2_cjkke")
+texture = ExtResource("2_irwl2")
 region_enabled = true
 region_rect = Rect2(0, 0, 10, 10)
 

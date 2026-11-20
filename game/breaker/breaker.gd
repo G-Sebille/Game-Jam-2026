@@ -1,22 +1,17 @@
-@tool
 extends Node2D
 class_name Satue
 
 @export var texture : Texture2D
 
-@export_tool_button("Recreate cells", "Callable") var create_action : Callable = create_cells
-
 @export var sprite_division : Vector2i = Vector2(2,2)
 
 @export var cell_parent : Node2D
-
-
 
 func create_cells() -> void:
 	var offset : Vector2 = texture.get_size() / Vector2(sprite_division)
 	var top_position : Vector2 = Vector2.ZERO - texture.get_size()/2
 	
-	var cell_scene : PackedScene = load("res://game/statue/damage_cell.tscn")
+	var cell_scene : PackedScene = load("res://game/breaker/damage_cell.tscn")
 
 	
 	for y in sprite_division.y :
@@ -26,7 +21,8 @@ func create_cells() -> void:
 			new_cell.name = str(x) + " " + str(y)
 			cell_parent.add_child(new_cell)
 			new_cell.texture = texture
-			new_cell.create(top_position + offset*Vector2(x,y)*1.1, offset, offset*Vector2(x,y))
+			new_cell.create(top_position + offset*Vector2(x,y)*1.01, offset, offset*Vector2(x,y))
+			
 			new_cell.visible = true
 			new_cell.owner = $CellParent
 			

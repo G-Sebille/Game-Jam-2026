@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://v6es5fvfghw0"]
+
+[ext_resource type="Script" uid="uid://ugaaqg0rh5la" path="res://game/breaker/breaker.gd" id="1_10arr"]
+[ext_resource type="Texture2D" uid="uid://bs5ptslwcyfsi" path="res://icon.svg" id="2_mo2q1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5jfn"]
+size = Vector2(362, 20)
+
+[node name="Breaker" type="Node2D" unique_id=1054678342 node_paths=PackedStringArray("cell_parent")]
+script = ExtResource("1_10arr")
+texture = ExtResource("2_mo2q1")
+sprite_division = Vector2i(16, 16)
+cell_parent = NodePath("CellParent")
+
+[node name="CellParent" type="Node2D" parent="." unique_id=1172850064]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=823930648]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=203397111]
+position = Vector2(0, 109)
+shape = SubResource("RectangleShape2D_n5jfn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=715080771]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1871903240]
+visible = false
+texture = ExtResource("2_mo2q1")
