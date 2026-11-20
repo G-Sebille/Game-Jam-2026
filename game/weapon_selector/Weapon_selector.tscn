@@ -5,23 +5,26 @@
 [ext_resource type="Resource" uid="uid://dt6skdonigxis" path="res://game/weapon_selector/weapon/knife.tres" id="3_kce7c"]
 [ext_resource type="Resource" uid="uid://bbrk2onk012nf" path="res://game/weapon_selector/weapon/Axe.tres" id="4_fdety"]
 [ext_resource type="Resource" uid="uid://cwrxonuuvkmn4" path="res://game/weapon_selector/weapon/Hammer.tres" id="5_hostu"]
+[ext_resource type="Resource" uid="uid://ddyiqwkgn6sgi" path="res://game/weapon_selector/weapon/SplashBall.tres" id="6_juibk"]
 [ext_resource type="Texture2D" uid="uid://bn7mjsp51b7oj" path="res://asset/hammer.png" id="6_thgks"]
 [ext_resource type="Texture2D" uid="uid://ph3jsseksju" path="res://asset/Sprite_axe_presentation.png" id="7_hostu"]
 [ext_resource type="Texture2D" uid="uid://cdi41vfgtfwfp" path="res://asset/couteau3.png" id="7_thgks"]
+[ext_resource type="Texture2D" uid="uid://wcr7wumqvrot" path="res://asset/boule_de_lolibidon.png" id="9_tasvc"]
 
-[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label", "button_R", "button_L", "center_Sprite")]
+[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label", "button_R", "button_L", "center_Sprite", "splash_Ball")]
 script = ExtResource("1_50u1q")
-weapon_array = Array[ExtResource("2_to571")]([ExtResource("3_kce7c"), ExtResource("4_fdety"), ExtResource("5_hostu")])
+weapon_array = Array[ExtResource("2_to571")]([ExtResource("3_kce7c"), ExtResource("4_fdety"), ExtResource("5_hostu"), ExtResource("6_juibk")])
 label = NodePath("Label")
 button_R = NodePath("Button_right")
 button_L = NodePath("Button_left")
 center_Sprite = NodePath("Center_sprite")
+splash_Ball = NodePath("Splash_Ball")
 
 [node name="Button_right" type="TextureButton" parent="." unique_id=1298625098]
-offset_left = 365.00003
-offset_top = 801.0
+offset_left = 357.0
+offset_top = 809.0
 offset_right = 614.4553
-offset_bottom = 1050.6782
+offset_bottom = 1085.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("6_thgks")
 ignore_texture_size = true
@@ -31,18 +34,23 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Button_left" type="TextureButton" parent="." unique_id=1678040440]
-offset_left = 61.0
-offset_top = 803.0
-offset_right = 321.0
-offset_bottom = 1041.0
+offset_left = 71.0
+offset_top = 807.0
+offset_right = 371.0
+offset_bottom = 1107.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("7_thgks")
 ignore_texture_size = true
 
 [node name="Center_sprite" type="Sprite2D" parent="." unique_id=120999433]
-position = Vector2(282, 854.00006)
+position = Vector2(278, 872)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_hostu")
+
+[node name="Splash_Ball" type="Sprite2D" parent="." unique_id=1190000091]
+position = Vector2(29, 881)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("9_tasvc")
 
 [connection signal="pressed" from="Button_right" to="." method="_on_button_right_pressed"]
 [connection signal="pressed" from="Button_left" to="." method="_on_button_left_pressed"]
