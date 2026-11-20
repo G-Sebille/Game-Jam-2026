@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://bt3q6hi6emlq4"]
 
 [ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset/confettiseul.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://beeb1pm7bvqmt" path="res://asset/feubeta.png" id="2_0e48y"]
 
 [sub_resource type="Gradient" id="Gradient_1m0bj"]
 offsets = PackedFloat32Array(0, 0.18518518, 0.38271606, 0.6728395, 0.83950615)
 colors = PackedColorArray(1, 0, 0, 1, 0.8816565, 0.61919326, 0, 1, 0.33333334, 1, 0.9764706, 1, 0.72933257, 0.36539465, 0.9722026, 1, 0.9568214, 0.00083420216, 0.9697508, 1)
+
+[sub_resource type="Curve" id="Curve_301pc"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0.010638304, 360), 0.0, 0.0, 0, 0, Vector2(0.2393617, -173.93256), 0.0, 0.0, 0, 0, Vector2(0.7553192, 4.044983), 0.0, 0.0, 0, 0, Vector2(1, -351.91016), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_0hol4"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.0053191558, -0.6179775), 0.0, 0.0, 0, 0, Vector2(0.25531915, -0.5280899), 0.0, 0.0, 0, 0, Vector2(0.64361703, -0.28089893), 0.0, 0.0, 0, 0, Vector2(0.79787236, 1), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="Node2D" type="Node2D" unique_id=914959569]
 
@@ -39,3 +50,21 @@ explosiveness = 0.2
 direction = Vector2(0, 0)
 spread = 135.0
 initial_velocity_max = 138.62
+
+[node name="Fire_particules" type="CPUParticles2D" parent="." unique_id=1044982737]
+position = Vector2(380, 0)
+emitting = false
+amount = 200
+texture = ExtResource("2_0e48y")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 9.9
+initial_velocity_max = 227.72
+angle_curve = SubResource("Curve_301pc")
+hue_variation_min = -0.8
+hue_variation_max = 0.2
+hue_variation_curve = SubResource("Curve_0hol4")
