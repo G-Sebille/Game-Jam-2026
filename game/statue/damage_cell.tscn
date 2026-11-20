@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://x4b4dtw43ldp"]
+
+[ext_resource type="Script" uid="uid://drc3qire5tqsw" path="res://game/statue/damage_cell.gd" id="1_nk3mm"]
+[ext_resource type="Texture2D" uid="uid://bs5ptslwcyfsi" path="res://icon.svg" id="2_cjkke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5jfn"]
+
+[node name="DamageCell" type="Node2D" unique_id=639076399 node_paths=PackedStringArray("collision_shape", "rigid_body", "sprite_2d")]
+script = ExtResource("1_nk3mm")
+collision_shape = NodePath("RigidBody2D/CollisionShape2D")
+rigid_body = NodePath("RigidBody2D")
+sprite_2d = NodePath("RigidBody2D/Sprite2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1511371149]
+mass = 0.1
+continuous_cd = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=390264994]
+texture = ExtResource("2_cjkke")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1813396479]
+shape = SubResource("RectangleShape2D_n5jfn")
