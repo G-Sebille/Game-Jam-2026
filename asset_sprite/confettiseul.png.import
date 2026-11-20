@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wcr7wumqvrot"
-path="res://.godot/imported/boule_de_lolibidon.png-c22d7df69f9802b43b4f1f034bef7f98.ctex"
+uid="uid://0mjwcleet7wj"
+path="res://.godot/imported/confettiseul.png-2d4b9615ca5d84382d6a9eeaed472439.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/boule_de_lolibidon.png"
-dest_files=["res://.godot/imported/boule_de_lolibidon.png-c22d7df69f9802b43b4f1f034bef7f98.ctex"]
+source_file="res://asset_sprite/confettiseul.png"
+dest_files=["res://.godot/imported/confettiseul.png-2d4b9615ca5d84382d6a9eeaed472439.ctex"]
 
 [params]
 

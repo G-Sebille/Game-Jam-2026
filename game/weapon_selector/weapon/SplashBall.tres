@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://ddyiqwkgn6sgi"]
 
 [ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="1_67o0r"]
-[ext_resource type="Texture2D" uid="uid://wcr7wumqvrot" path="res://asset/boule_de_lolibidon.png" id="2_yha3m"]
+[ext_resource type="Texture2D" uid="uid://wcr7wumqvrot" path="res://asset_sprite/boule_de_lolibidon.png" id="2_yha3m"]
 
 [resource]
 script = ExtResource("1_67o0r")

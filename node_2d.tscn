@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://tyb7ah6aj1ea"]
 
 [ext_resource type="Script" uid="uid://cv31dvan65jr5" path="res://game/Impact.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset_sprite/confettiseul.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://mkiiq1e6jjy1" path="res://asset_sprite/glass_frag.png" id="3_0hol4"]
 
 [sub_resource type="Gradient" id="Gradient_1m0bj"]
 offsets = PackedFloat32Array(0, 0.18518518, 0.38271606, 0.6728395, 0.83950615)
@@ -18,6 +20,7 @@ victory = NodePath("victory_suprise")
 [node name="victory_suprise" type="CPUParticles2D" parent="." unique_id=1400039351]
 emitting = false
 amount = 100
+texture = ExtResource("2_epypp")
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
@@ -34,7 +37,7 @@ color_initial_ramp = SubResource("Gradient_1m0bj")
 hue_variation_min = -0.65
 hue_variation_max = 0.04
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=796463617]
+[node name="Lunch" type="CPUParticles2D" parent="." unique_id=796463617]
 position = Vector2(258, -27)
 emitting = false
 amount = 16
@@ -50,6 +53,7 @@ initial_velocity_max = 138.62
 position = Vector2(691, -1)
 emitting = false
 amount = 125
+texture = ExtResource("3_0hol4")
 lifetime = 0.8
 one_shot = true
 explosiveness = 1.0

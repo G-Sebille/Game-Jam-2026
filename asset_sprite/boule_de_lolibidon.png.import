@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ndxb6hy8h4ge"
-path="res://.godot/imported/boule_ou_une_couille.png-bb27f50b047ea14e0322c87794ae109d.ctex"
+uid="uid://wcr7wumqvrot"
+path="res://.godot/imported/boule_de_lolibidon.png-d0053dec2021c4d8fc2378a3adfd16b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/boule_ou_une_couille.png"
-dest_files=["res://.godot/imported/boule_ou_une_couille.png-bb27f50b047ea14e0322c87794ae109d.ctex"]
+source_file="res://asset_sprite/boule_de_lolibidon.png"
+dest_files=["res://.godot/imported/boule_de_lolibidon.png-d0053dec2021c4d8fc2378a3adfd16b6.ctex"]
 
 [params]
 

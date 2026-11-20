@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ph3jsseksju" path="res://asset/Sprite_axe_presentation.png" id="7_hostu"]
 [ext_resource type="Texture2D" uid="uid://cdi41vfgtfwfp" path="res://asset/couteau3.png" id="7_thgks"]
 [ext_resource type="Resource" uid="uid://cnmg2pdw8yo8n" path="res://game/weapon_selector/weapon/Match.tres" id="8_n0mjx"]
-[ext_resource type="Texture2D" uid="uid://wcr7wumqvrot" path="res://asset/boule_de_lolibidon.png" id="9_tasvc"]
+[ext_resource type="Texture2D" uid="uid://wcr7wumqvrot" path="res://asset_sprite/boule_de_lolibidon.png" id="9_tasvc"]
 [ext_resource type="Texture2D" uid="uid://dvurak6md5i5h" path="res://asset/piocghe.png" id="12_m1wcp"]
 [ext_resource type="Texture2D" uid="uid://ddxofx6w55rb5" path="res://asset/Match.png" id="14_c16g2"]
 
