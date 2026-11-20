@@ -15,4 +15,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	var dir = body.position - position
 	
 	if body is RigidBody2D :
-		body.apply_force(dir * 10000, position)
+		body.apply_force(dir * 1000, position)
