@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bbrk2onk012nf" path="res://game/weapon_selector/weapon/Axe.tres" id="4_fdety"]
 [ext_resource type="Resource" uid="uid://cwrxonuuvkmn4" path="res://game/weapon_selector/weapon/Hammer.tres" id="5_hostu"]
 [ext_resource type="Texture2D" uid="uid://bhjcsnbx11o00" path="res://asset/marteau.png" id="6_thgks"]
-[ext_resource type="Texture2D" uid="uid://d3c3njpfjqaaf" path="res://asset/hach.png" id="7_hostu"]
+[ext_resource type="Texture2D" uid="uid://ph3jsseksju" path="res://asset/Sprite_axe_presentation.png" id="7_hostu"]
 [ext_resource type="Texture2D" uid="uid://b6qdre1ovg45" path="res://asset/COUTEAU.png" id="7_thgks"]
 
 [node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label", "button_R", "button_L", "center_Sprite")]
@@ -18,11 +18,11 @@ button_L = NodePath("Button_left")
 center_Sprite = NodePath("Center_sprite")
 
 [node name="Button_right" type="Button" parent="." unique_id=1017787212]
-offset_left = 359.0
-offset_top = 837.00006
-offset_right = 495.0
-offset_bottom = 973.00006
-scale = Vector2(0.91589975, 0.77565897)
+offset_left = 351.0
+offset_top = 838.00006
+offset_right = 487.0
+offset_bottom = 974.00006
+scale = Vector2(0.918, 0.777)
 icon = ExtResource("6_thgks")
 
 [node name="Label" type="Label" parent="." unique_id=402760763]
@@ -30,16 +30,16 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Button_left" type="Button" parent="." unique_id=1914901504]
-offset_left = 81.99999
-offset_top = 834.0
-offset_right = 225.72556
-offset_bottom = 1002.3334
-scale = Vector2(0.5983626, 0.60000014)
+offset_left = 74.999985
+offset_top = 824.99994
+offset_right = 218.72554
+offset_bottom = 993.3333
+scale = Vector2(0.774, 0.777)
 icon = ExtResource("7_thgks")
 
 [node name="Center_sprite" type="Sprite2D" parent="." unique_id=120999433]
-position = Vector2(258, 882)
-scale = Vector2(1.1274683, 1.1690246)
+position = Vector2(265.03, 875.386)
+scale = Vector2(0.6638281, 0.65323466)
 texture = ExtResource("7_hostu")
 
 [connection signal="pressed" from="Button_right" to="." method="_on_button_right_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3c3njpfjqaaf"
-path="res://.godot/imported/hach.png-68bfe00dfc407cb046bc53735e10b892.ctex"
+uid="uid://ph3jsseksju"
+path="res://.godot/imported/Sprite_axe_presentation.png-ba1b10ff42c280c442bf5d0fa2dd67ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/hach.png"
-dest_files=["res://.godot/imported/hach.png-68bfe00dfc407cb046bc53735e10b892.ctex"]
+source_file="res://asset/Sprite_axe_presentation.png"
+dest_files=["res://.godot/imported/Sprite_axe_presentation.png-ba1b10ff42c280c442bf5d0fa2dd67ee.ctex"]
 
 [params]
 
