@@ -5,20 +5,29 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5jfn"]
 
-[node name="DamageCell" type="Node2D" unique_id=639076399 node_paths=PackedStringArray("collision_shape", "rigid_body", "sprite_2d")]
-script = ExtResource("1_i3nfe")
-collision_shape = NodePath("RigidBody2D/CollisionShape2D")
-rigid_body = NodePath("RigidBody2D")
-sprite_2d = NodePath("RigidBody2D/Sprite2D")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1511371149]
-mass = 0.1
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1511371149 node_paths=PackedStringArray("collision_shape", "area_collision_shape", "rigid_body", "sprite_2d")]
+collision_layer = 2
+gravity_scale = 0.5
+sleeping = true
 continuous_cd = 1
+script = ExtResource("1_i3nfe")
+collision_shape = NodePath("CollisionShape2D")
+area_collision_shape = NodePath("Area2D/CollisionShape2D")
+rigid_body = NodePath(".")
+sprite_2d = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=390264994]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=390264994]
 texture = ExtResource("2_irwl2")
 region_enabled = true
 region_rect = Rect2(0, 0, 10, 10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1813396479]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1813396479]
 shape = SubResource("RectangleShape2D_n5jfn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=59052765]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=526633058]
+shape = SubResource("RectangleShape2D_n5jfn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
