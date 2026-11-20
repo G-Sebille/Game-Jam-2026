@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://dgeyf8ibyig4"]
+
+[ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="1_qn5kj"]
+[ext_resource type="Texture2D" uid="uid://dvurak6md5i5h" path="res://asset/piocghe.png" id="2_ii6ho"]
+
+[resource]
+script = ExtResource("1_qn5kj")
+id = "pickaxe"
+texture = ExtResource("2_ii6ho")
+name = "Pickaxe"
+metadata/_custom_type_script = "uid://tv7jm2hi3oyi"

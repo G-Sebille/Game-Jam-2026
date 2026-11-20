@@ -7,6 +7,8 @@ extends Node2D
 @export var button_L : TextureButton
 @export var center_Sprite : Sprite2D
 @export var splash_Ball : Sprite2D
+@export var pickaxe : Sprite2D
+@export var fire_stick : Sprite2D
 
 var sprite_tab : Array[Sprite2D] = []
 var current_weapon : WeaponResource
@@ -37,6 +39,8 @@ func select_weapon(is_swiping_right) -> WeaponResource:
 	return weapon_array[current_index]
 		
 func update_img() -> void:
+	fire_stick.texture = weapon_array[(current_index+3)%weapon_array.size()].texture
+	pickaxe.texture = weapon_array[(current_index+2)%weapon_array.size()].texture
 	button_R.texture_normal = weapon_array[(current_index+1)%weapon_array.size()].texture
 	center_Sprite.texture = weapon_array[current_index].texture
 	button_L.texture_normal = weapon_array[(current_index-1)%weapon_array.size()].texture

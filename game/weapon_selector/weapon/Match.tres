@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://cnmg2pdw8yo8n"]
+
+[ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="1_76xmi"]
+[ext_resource type="Texture2D" uid="uid://ddxofx6w55rb5" path="res://asset/Match.png" id="2_1hdch"]
+
+[resource]
+script = ExtResource("1_76xmi")
+id = "match"
+texture = ExtResource("2_1hdch")
+name = "Match"
+metadata/_custom_type_script = "uid://tv7jm2hi3oyi"
