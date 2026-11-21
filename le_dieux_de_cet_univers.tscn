@@ -39,6 +39,8 @@
 [ext_resource type="AudioStream" uid="uid://c0dh8dlmnh0fa" path="res://SFX/PICKAXE/PICKAXE_STONE_1.ogg" id="28_b1in3"]
 [ext_resource type="AudioStream" uid="uid://b2nbnprg628sc" path="res://SFX/PICKAXE/PICKAXE_STONE_2.ogg" id="29_vlk0k"]
 [ext_resource type="AudioStream" uid="uid://c6s2xhvhgc74h" path="res://SFX/PICKAXE/PICKAXE_STONE_3.ogg" id="30_y4yho"]
+[ext_resource type="AudioStream" uid="uid://dbn8nb5urmbx0" path="res://SFX/MUSICS/Museum_pourcent.ogg" id="40_0s4dq"]
+[ext_resource type="AudioStream" uid="uid://bhdaijikjoodg" path="res://SFX/MUSICS/Museum_pourcent_drums.ogg" id="41_64kju"]
 
 [node name="Le Dieux de cet Univers" type="Node" unique_id=997471926]
 
@@ -213,6 +215,19 @@ bus = &"SFX"
 [node name="HammerWood" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Hammer" unique_id=213789355]
 stream = ExtResource("25_d61m7")
 bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=329736102]
+stream = ExtResource("40_0s4dq")
+autoplay = true
+bus = &"Music"
+playback_type = 1
+
+[node name="Drums" type="AudioStreamPlayer" parent="." unique_id=534402917]
+stream = ExtResource("41_64kju")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+playback_type = 1
 
 [connection signal="play" from="MainMenu" to="LevelManager" method="nextLevel"]
 [connection signal="swap_effected" from="Swipe" to="Offset/Projectile" method="launch"]
