@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c6ma2ho5rj1t6"]
+
+[ext_resource type="Script" uid="uid://bhh5p0rdvy1gb" path="res://game/breaker/damage_cell.gd" id="1_i3nfe"]
+[ext_resource type="Texture2D" uid="uid://bs5ptslwcyfsi" path="res://icon.svg" id="2_irwl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5jfn"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1511371149 node_paths=PackedStringArray("collision_shape", "area_collision_shape", "rigid_body", "sprite_2d")]
+collision_layer = 2
+gravity_scale = 0.5
+sleeping = true
+continuous_cd = 1
+script = ExtResource("1_i3nfe")
+collision_shape = NodePath("CollisionShape2D")
+area_collision_shape = NodePath("Area2D/CollisionShape2D")
+rigid_body = NodePath(".")
+sprite_2d = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=390264994]
+texture = ExtResource("2_irwl2")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1813396479]
+shape = SubResource("RectangleShape2D_n5jfn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=59052765]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=526633058]
+shape = SubResource("RectangleShape2D_n5jfn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
