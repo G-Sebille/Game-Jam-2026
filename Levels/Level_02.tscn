@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cdkkt7qmutoul"]
+
+[ext_resource type="Texture2D" uid="uid://b5pqw7o4c66p1" path="res://mur1.png" id="1_ce6vd"]
+[ext_resource type="PackedScene" uid="uid://v6es5fvfghw0" path="res://game/breaker/breaker.tscn" id="2_8m0px"]
+[ext_resource type="Texture2D" uid="uid://mfu72xudsl27" path="res://asset_sprite/vase.png" id="3_8m0px"]
+[ext_resource type="Texture2D" uid="uid://b4pilmfqelfxf" path="res://asset_sprite/piedestale.png" id="4_hhbg7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_301pc"]
+size = Vector2(116.778366, 236.1199)
+
+[node name="Level02" type="Node2D" unique_id=1696570743]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457879473]
+position = Vector2(540.5, 958.5)
+scale = Vector2(2.3933332, 1.9169999)
+texture = ExtResource("1_ce6vd")
+
+[node name="Breaker" parent="." unique_id=1054678342 instance=ExtResource("2_8m0px")]
+position = Vector2(494, 1141)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_8m0px")
+
+[node name="Piedestale" type="Sprite2D" parent="." unique_id=1593894587]
+position = Vector2(511.00003, 1586)
+scale = Vector2(2.7402344, 2.7861328)
+texture = ExtResource("4_hhbg7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Piedestale" unique_id=1451977927]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piedestale/StaticBody2D" unique_id=2000386179]
+position = Vector2(-1.824707, 2.1783447)
+shape = SubResource("RectangleShape2D_301pc")
