@@ -12,7 +12,6 @@ func create_cells() -> void:
 	var top_position : Vector2 = Vector2.ZERO - texture.get_size()/2
 	
 	var cell_scene : PackedScene = load("res://game/breaker/damage_cell.tscn")
-
 	
 	for y in sprite_division.y :
 		for x in sprite_division.x:
@@ -25,7 +24,6 @@ func create_cells() -> void:
 			
 			new_cell.visible = true
 			new_cell.owner = $CellParent
-			
 
 
 # Called when the node enters the scene tree for the first time.

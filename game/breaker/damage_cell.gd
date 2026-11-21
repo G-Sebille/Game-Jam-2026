@@ -33,7 +33,6 @@ func _physics_process(delta: float) -> void:
 		self.position = start_position
 		self.linear_velocity = Vector2(0,0)
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	self.sleeping = false
 	self.can_move = true

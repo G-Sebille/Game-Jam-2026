@@ -1,6 +1,5 @@
 extends Node
 
-var current_weapon = Gm.arme
 @export var fire : CPUParticles2D
 @export var glass : CPUParticles2D
 @export var victory : CPUParticles2D
@@ -8,7 +7,10 @@ var current_weapon = Gm.arme
 @export var rock : CPUParticles2D
 @export var porcelain : CPUParticles2D
 
+var current_weapon
+
 func IMPACT(oeuvre_type : Gm.art, pos : Vector2) -> bool:
+	current_weapon = Gm.arme
 	var sender = false
 	match oeuvre_type :
 		Gm.art.Peinture :
@@ -99,13 +101,13 @@ func IMPACT(oeuvre_type : Gm.art, pos : Vector2) -> bool:
 	
 
 func spawn_paticules(oeuvre_type : Gm.art, pos : Vector2) -> void:
-	
 	match oeuvre_type: 
 		Gm.art.Peinture:
 			match current_weapon : 
 				Gm.arme.Allumette:
 					fire.global_position = pos
 					fire.emitting = true
+					print("Fire")
 				_ :
 					pass
 		Gm.art.Statue:
@@ -113,22 +115,28 @@ func spawn_paticules(oeuvre_type : Gm.art, pos : Vector2) -> void:
 				Gm.arme.Allumette:
 					fire.global_position = pos
 					fire.emitting = true
+					print("Fire")
 				_ : 
 					rock.global_position = pos
 					rock.emitting = true
+					print("Rock")
 		Gm.art.Vase:
 			match current_weapon:
 				Gm.arme.Allumette:	
 					fire.global_position = pos
 					fire.emitting = true
+					print("Fire")
 				_ : 
 					porcelain.global_position = pos
 					porcelain.emitting = true
+					print("Porc")
 		Gm.art.Verre:
 			match current_weapon:
 				Gm.arme.Allumette:
 					fire.global_poistion = pos
 					fire.emitting = true
+					print("Fire")
 				_ : 
 					glass.global_position = pos
 					glass.emitting = true 
+					print("Glass")

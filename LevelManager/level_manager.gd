@@ -12,7 +12,8 @@ func _process(_delta: float) -> void:
 		nextLevel()
 
 func nextLevel():
-	get_child(0).queue_free()
+	for i in get_children():
+		i.queue_free()
 	var scene = LevelList[CurrentLevel].instantiate()
 	self.add_child(scene)
 	CurrentLevel += 1

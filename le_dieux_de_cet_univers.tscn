@@ -14,18 +14,20 @@
 z_index = 10
 
 [node name="LevelManager" parent="." unique_id=1947072356 instance=ExtResource("2_eplyt")]
+z_index = -1
 LevelList = Array[PackedScene]([ExtResource("3_7fwwh")])
 
-[node name="Level01" parent="LevelManager" unique_id=1952836479 instance=ExtResource("3_7fwwh")]
-
 [node name="WeaponSelector" parent="." unique_id=63092402 instance=ExtResource("3_3x0rb")]
+z_index = 2
 position = Vector2(3, 0)
 scale = Vector2(2, 2)
 
 [node name="Swipe" parent="." unique_id=1512705521 instance=ExtResource("4_7fwwh")]
+z_index = 3
 position = Vector2(552, 1712)
 
 [node name="Offset" type="Node2D" parent="." unique_id=1071341000]
+z_index = 1
 position = Vector2(552, 1322)
 
 [node name="Projectile" parent="Offset" unique_id=1415112124 instance=ExtResource("5_eplyt")]
@@ -34,3 +36,4 @@ position = Vector2(552, 1322)
 
 [connection signal="play" from="MainMenu" to="LevelManager" method="nextLevel"]
 [connection signal="swap_effected" from="Swipe" to="Offset/Projectile" method="launch"]
+[connection signal="contact" from="Offset/Projectile" to="Impact" method="IMPACT"]

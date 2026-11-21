@@ -6,13 +6,28 @@ enum art{Peinture, Statue, Vase, Verre}
 
 var current_index = 0
 
-@warning_ignore("unused_signal")
 signal next_level
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+# Alwais use protections guys
+var use_protection : bool = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var current_type : art
+
+var current_protection_type : art
+
+var life : int = 3
+
+func loose_life() :
+	life -= 1
+	if life <= 0 :
+		if use_protection :
+			use_protection = false
+			life = 3
+		else :
+			next_level.emit()
+
+func get_type() -> art :
+	if use_protection :
+		return current_protection_type
+	else :
+		return current_type

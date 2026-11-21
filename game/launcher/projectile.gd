@@ -13,8 +13,12 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
-	print(self.position)
+	print(global_position)
 	# C'est temporaire avant que tu merge ton code
+	contact.emit(Gm.art.Statue, global_position)
+	
+	Gm.loose_life()
+	
 	for area : Area2D in self.get_overlapping_areas():
 		area.area_entered.emit(self)
 	self.monitorable = true

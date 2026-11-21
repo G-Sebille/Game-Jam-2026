@@ -50,7 +50,6 @@ hue_variation_min = -0.65
 hue_variation_max = 0.04
 
 [node name="Lunch" type="CPUParticles2D" parent="." unique_id=796463617]
-position = Vector2(258, -27)
 emitting = false
 amount = 16
 lifetime = 0.5
@@ -62,7 +61,6 @@ spread = 135.0
 initial_velocity_max = 138.62
 
 [node name="glass_particules" type="CPUParticles2D" parent="." unique_id=397634368]
-position = Vector2(691, -1)
 emitting = false
 amount = 125
 texture = ExtResource("3_mxv8r")
@@ -79,7 +77,6 @@ scale_amount_max = 0.4
 scale_amount_curve = SubResource("Curve_301pc")
 
 [node name="Fire_particules" type="CPUParticles2D" parent="." unique_id=917041735]
-position = Vector2(277, 964)
 emitting = false
 amount = 200
 texture = ExtResource("4_mara0")
@@ -96,7 +93,6 @@ angle_curve = SubResource("Curve_301pc")
 hue_variation_curve = SubResource("Curve_0hol4")
 
 [node name="Porcelain" type="CPUParticles2D" parent="." unique_id=727449233]
-position = Vector2(174, -117)
 emitting = false
 amount = 10
 texture = ExtResource("5_4q474")
@@ -112,7 +108,6 @@ angle_min = -213.9
 angle_max = 71.3
 
 [node name="Rock" type="CPUParticles2D" parent="." unique_id=2081248815]
-position = Vector2(225, 155)
 emitting = false
 amount = 10
 texture = ExtResource("6_cvog6")
