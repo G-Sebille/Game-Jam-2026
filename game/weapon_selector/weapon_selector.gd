@@ -45,7 +45,7 @@ func select_weapon(is_swiping_right) -> WeaponResource:
 		current_index = (current_index-1)%weapon_array.size()
 	return weapon_array[current_index]
 	Gm.current_index = current_index
-		
+	Gm.current_weapon = weapon_array[current_index].type
 func update_img() -> void:
 	fire_stick.texture = weapon_array[(current_index+3)%weapon_array.size()].texture
 	pickaxe.texture = weapon_array[(current_index+2)%weapon_array.size()].texture

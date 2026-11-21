@@ -8,14 +8,13 @@ class_name Projectile
 @warning_ignore("unused_signal")
 signal contact(oeuvre_type : Gm.art, pos : Vector2)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready() -> void: 
+	pass
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	print(global_position)
 	# C'est temporaire avant que tu merge ton code
-	contact.emit(Gm.art.Statue, global_position)
+	contact.emit(global_position)
 	
 	Gm.loose_life()
 	
@@ -33,8 +32,6 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 			print(dir)
 			var force : float = randf_range(2,5)
 			body.apply_impulse(dir * force,self.position)
-
-
 
 func launch(Vector2) -> void:
 	animation_player.play(&"launch")

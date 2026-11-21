@@ -7,11 +7,13 @@ extends Node
 @export var rock : CPUParticles2D
 @export var porcelain : CPUParticles2D
 
-var current_weapon
+var current_weapon : Gm.arme
 
-func IMPACT(oeuvre_type : Gm.art, pos : Vector2) -> bool:
-	current_weapon = Gm.arme
-	var sender = false
+func IMPACT(pos : Vector2) -> bool:
+	current_weapon = Gm.current_weapon
+	var oeuvre_type = Gm.get_type()
+	print(current_weapon)
+	print("Start")
 	match oeuvre_type :
 		Gm.art.Peinture :
 			match current_weapon :
@@ -35,8 +37,10 @@ func IMPACT(oeuvre_type : Gm.art, pos : Vector2) -> bool:
 					return true
 					
 		Gm.art.Statue :
+			print("Statue")
 			match current_weapon :
 				Gm.arme.Marteau :
+					print("Statue")
 					spawn_paticules(Gm.art.Statue, pos)
 					return false
 				Gm.arme.Couteau :

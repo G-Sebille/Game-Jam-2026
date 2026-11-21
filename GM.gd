@@ -6,6 +6,8 @@ enum art{Peinture, Statue, Vase, Verre}
 
 var current_index = 0
 
+var current_weapon : arme
+
 signal next_level
 
 # Alwais use protections guys
