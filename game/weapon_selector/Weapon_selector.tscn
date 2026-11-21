@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://digvt7e3rpcyy"]
+
+[ext_resource type="Script" uid="uid://b3cf3sk7w3o37" path="res://game/weapon_selector/weapon_selector.gd" id="1_50u1q"]
+[ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="2_to571"]
+[ext_resource type="Resource" uid="uid://dt6skdonigxis" path="res://game/weapon_selector/weapon/knife.tres" id="3_kce7c"]
+[ext_resource type="Resource" uid="uid://bbrk2onk012nf" path="res://game/weapon_selector/weapon/Axe.tres" id="4_fdety"]
+[ext_resource type="Resource" uid="uid://cwrxonuuvkmn4" path="res://game/weapon_selector/weapon/Hammer.tres" id="5_hostu"]
+[ext_resource type="Resource" uid="uid://ddyiqwkgn6sgi" path="res://game/weapon_selector/weapon/SplashBall.tres" id="6_juibk"]
+[ext_resource type="Texture2D" uid="uid://bn7mjsp51b7oj" path="res://asset/hammer.png" id="6_thgks"]
+[ext_resource type="Resource" uid="uid://dgeyf8ibyig4" path="res://game/weapon_selector/weapon/Pickaxe.tres" id="7_4x8mp"]
+[ext_resource type="Texture2D" uid="uid://ph3jsseksju" path="res://asset/Sprite_axe_presentation.png" id="7_hostu"]
+[ext_resource type="Texture2D" uid="uid://cdi41vfgtfwfp" path="res://asset/couteau3.png" id="7_thgks"]
+[ext_resource type="Resource" uid="uid://cnmg2pdw8yo8n" path="res://game/weapon_selector/weapon/Match.tres" id="8_n0mjx"]
+[ext_resource type="Texture2D" uid="uid://dvurak6md5i5h" path="res://asset/piocghe.png" id="12_m1wcp"]
+[ext_resource type="Texture2D" uid="uid://ndxb6hy8h4ge" path="res://asset_sprite/boule_ou_une_couille.png" id="12_n0mjx"]
+[ext_resource type="Texture2D" uid="uid://d4bac2adwtj50" path="res://asset/allumette_de_Larry_le_malicieux.png" id="14_n0mjx"]
+[ext_resource type="AudioStream" uid="uid://v13vn0ulwc85" path="res://SFX/UI/Change_Weapon_Left.ogg" id="15_n6gwp"]
+[ext_resource type="AudioStream" uid="uid://b17j6rt3ycr18" path="res://SFX/UI/Change_Weapon_Right.ogg" id="16_h67j8"]
+
+[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("WEAPON_LEFT", "WEAPON_RIGHT", "label", "button_R", "button_L", "center_Sprite", "splash_Ball", "pickaxe", "fire_stick")]
+script = ExtResource("1_50u1q")
+WEAPON_LEFT = NodePath("WEAPON_LEFT")
+WEAPON_RIGHT = NodePath("WEAPON_RIGHT")
+weapon_array = Array[ExtResource("2_to571")]([ExtResource("3_kce7c"), ExtResource("4_fdety"), ExtResource("5_hostu"), ExtResource("6_juibk"), ExtResource("7_4x8mp"), ExtResource("8_n0mjx")])
+label = NodePath("Label")
+button_R = NodePath("Button_right")
+button_L = NodePath("Button_left")
+center_Sprite = NodePath("Center_sprite")
+splash_Ball = NodePath("Splash_Ball")
+pickaxe = NodePath("Pickaxe")
+fire_stick = NodePath("Match")
+
+[node name="Button_right" type="TextureButton" parent="." unique_id=1298625098]
+offset_left = 299.0
+offset_top = 769.0
+offset_right = 556.4553
+offset_bottom = 1045.0
+scale = Vector2(0.50868946, 0.66222763)
+texture_normal = ExtResource("6_thgks")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="." unique_id=402760763]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_left" type="TextureButton" parent="." unique_id=1678040440]
+offset_left = 80.0
+offset_top = 780.99994
+offset_right = 354.0
+offset_bottom = 1081.0
+scale = Vector2(0.5, 0.6200049)
+texture_normal = ExtResource("7_thgks")
+ignore_texture_size = true
+
+[node name="Center_sprite" type="Sprite2D" parent="." unique_id=120999433]
+position = Vector2(262, 852.00006)
+scale = Vector2(0.5, 0.6199951)
+texture = ExtResource("7_hostu")
+
+[node name="Splash_Ball" type="Sprite2D" parent="." unique_id=1190000091]
+position = Vector2(48, 878)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("12_n0mjx")
+
+[node name="Pickaxe" type="Sprite2D" parent="." unique_id=1951594073]
+position = Vector2(470, 854)
+scale = Vector2(0.4307258, 0.44104096)
+texture = ExtResource("12_m1wcp")
+
+[node name="Match" type="Sprite2D" parent="." unique_id=535098570]
+position = Vector2(604, 863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_n0mjx")
+
+[node name="WEAPON_LEFT" type="AudioStreamPlayer" parent="." unique_id=650363166]
+stream = ExtResource("15_n6gwp")
+bus = &"UI"
+
+[node name="WEAPON_RIGHT" type="AudioStreamPlayer" parent="." unique_id=103943437]
+stream = ExtResource("16_h67j8")
+bus = &"UI"
+
+[connection signal="pressed" from="Button_right" to="." method="_on_button_right_pressed"]
+[connection signal="pressed" from="Button_left" to="." method="_on_button_left_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dxvg0b8esytf4"]
+
+[ext_resource type="Script" uid="uid://b0xt420ri4gak" path="res://swipe.gd" id="1_y00qo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kluwg"]
+radius = 100.0
+
+[node name="Swipe" type="Node2D" unique_id=1512705521 node_paths=PackedStringArray("swipe_end_above_y")]
+z_index = 2
+script = ExtResource("1_y00qo")
+swipe_end_above_y = NodePath("Marker2D")
+
+[node name="Swipe Start" type="Area2D" parent="." unique_id=1090299957]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swipe Start" unique_id=1165762857]
+shape = SubResource("CircleShape2D_kluwg")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=510668614]
+position = Vector2(0, -147)
+
+[connection signal="input_event" from="Swipe Start" to="." method="_on_area_2d_input_event"]

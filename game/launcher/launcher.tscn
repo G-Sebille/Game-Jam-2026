@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d31w8b2dou5p5"]
+
+[ext_resource type="Texture2D" uid="uid://pojxwqkn8trw" path="res://assets/tableau.png" id="1_uxn6g"]
+[ext_resource type="PackedScene" uid="uid://b7ew7eqachgfn" path="res://game/launcher/projectile.tscn" id="2_rbo0u"]
+[ext_resource type="PackedScene" uid="uid://v6es5fvfghw0" path="res://game/breaker/breaker.tscn" id="4_xoiso"]
+
+[node name="Launcher" type="Node2D" unique_id=1402406496]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1440330055]
+visible = false
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_uxn6g")
+region_enabled = true
+region_rect = Rect2(40, 34, 55, 70)
+region_filter_clip_enabled = true
+
+[node name="Projectile" parent="." unique_id=1415112124 instance=ExtResource("2_rbo0u")]
+position = Vector2(0, 58)
+
+[node name="Button" type="Button" parent="." unique_id=1853873327]
+offset_left = -24.0
+offset_top = 113.0
+offset_right = 31.0
+offset_bottom = 144.0
+text = "TIRE!!!"
+
+[node name="Breaker" parent="." unique_id=1054678342 instance=ExtResource("4_xoiso")]
+position = Vector2(-1, -70)
+sprite_division = Vector2i(10, 10)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1737035924]
+zoom = Vector2(2.02, 2.02)

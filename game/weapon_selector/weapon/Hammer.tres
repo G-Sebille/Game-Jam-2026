@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://cwrxonuuvkmn4"]
+
+[ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="1_m2fxp"]
+[ext_resource type="Texture2D" uid="uid://bn7mjsp51b7oj" path="res://asset/hammer.png" id="2_e31ay"]
+
+[resource]
+script = ExtResource("1_m2fxp")
+id = "hammer"
+texture = ExtResource("2_e31ay")
+name = "Hammer"
+metadata/_custom_type_script = "uid://tv7jm2hi3oyi"
