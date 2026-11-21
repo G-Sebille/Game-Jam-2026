@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cme4nqu1ujx4o"]
+
+[ext_resource type="Script" uid="uid://70yf8w1h6tox" path="res://LevelManager/level_manager.gd" id="1_ra81a"]
+[ext_resource type="PackedScene" uid="uid://csh5eaa6sjggc" path="res://Levels/level_1.tscn" id="2_v6rsx"]
+[ext_resource type="PackedScene" uid="uid://bcgdwjfvj12s1" path="res://Levels/level_2.tscn" id="3_cgibc"]
+
+[node name="LevelManager" type="Node2D" unique_id=1947072356 node_paths=PackedStringArray("button")]
+script = ExtResource("1_ra81a")
+button = NodePath("Button")
+LevelList = Array[PackedScene]([ExtResource("2_v6rsx"), ExtResource("3_cgibc")])
+
+[node name="Button" type="Button" parent="." unique_id=1305882035]
+offset_left = 333.0
+offset_top = 232.0
+offset_right = 405.0
+offset_bottom = 299.0
+text = "Next
+Level"
+alignment = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
