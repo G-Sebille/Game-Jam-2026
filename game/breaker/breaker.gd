@@ -1,5 +1,5 @@
 extends Node2D
-class_name Satue
+class_name Breaker
 
 @export var texture : Texture2D
 

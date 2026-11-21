@@ -1,11 +1,12 @@
 extends Node2D
-
-class_name Oeuvre
+class_name WeaponSelector
 
 #var tableau = [peinture, couteau]
 #var cadre = [Hache, Alumette, peinture]
 #var ceramique = [Marteau, peinture, alumette] 
 var statue = [ ]
+
+signal weapon_changed(new_weapon : WeaponResource)
 
 @export var WEAPON_LEFT: AudioStreamPlayer
 @export var WEAPON_RIGHT: AudioStreamPlayer
@@ -45,9 +46,14 @@ func select_weapon(is_swiping_right) -> WeaponResource:
 		current_index = (current_index+1)%weapon_array.size()
 	else:
 		current_index = (current_index-1)%weapon_array.size()
-	return weapon_array[current_index]
+
 	Gm.current_index = current_index
 	Gm.current_weapon = weapon_array[current_index].type
+	self.current_weapon = weapon_array[current_index]
+	weapon_changed.emit(current_weapon)
+	return weapon_array[current_index]
+	
+	
 func update_img() -> void:
 	fire_stick.texture = weapon_array[(current_index+3)%weapon_array.size()].texture
 	pickaxe.texture = weapon_array[(current_index+2)%weapon_array.size()].texture
@@ -65,7 +71,3 @@ func _on_button_left_pressed() -> void:
 	WEAPON_LEFT.play()
 	select_weapon(false)
 	update_img()
-
-
-
-	

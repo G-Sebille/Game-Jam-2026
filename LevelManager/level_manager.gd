@@ -1,4 +1,6 @@
 extends Node2D
+class_name LevelManager
+
 @export var button : Button
 @export var LevelList : Array[PackedScene]
 

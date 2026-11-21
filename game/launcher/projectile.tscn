@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bs5ptslwcyfsi" path="res://icon.svg" id="2_cq5aj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n5jfn"]
-radius = 63.126858
+radius = 88.02273
 
 [sub_resource type="Animation" id="Animation_sx2it"]
 length = 0.001
@@ -176,13 +176,14 @@ _data = {
 &"launch": SubResource("Animation_wu30d")
 }
 
-[node name="Projectile" type="Area2D" unique_id=1415112124 node_paths=PackedStringArray("animation_player")]
+[node name="Projectile" type="Area2D" unique_id=1415112124 node_paths=PackedStringArray("animation_player", "sprite_2d")]
 position = Vector2(0, 58)
 collision_mask = 3
 monitorable = false
 script = ExtResource("1_5r8ve")
 animation_player = NodePath("AnimationPlayer")
-target_position = Vector2(-10, -10)
+sprite_2d = NodePath("Sprite2D")
+current_texture = ExtResource("2_cq5aj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1370605220]
 texture = ExtResource("2_cq5aj")

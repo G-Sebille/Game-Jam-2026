@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxvg0b8esytf4" path="res://swipe.tscn" id="4_7fwwh"]
 [ext_resource type="PackedScene" uid="uid://b7ew7eqachgfn" path="res://game/launcher/projectile.tscn" id="5_eplyt"]
 [ext_resource type="PackedScene" uid="uid://tyb7ah6aj1ea" path="res://Impact.tscn" id="6_3x0rb"]
+[ext_resource type="Texture2D" uid="uid://ph3jsseksju" path="res://asset/Sprite_axe_presentation.png" id="7_fvbj1"]
 [ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset_sprite/confettiseul.png" id="7_lhhl3"]
 [ext_resource type="Script" uid="uid://io8aa2jorkks" path="res://victory_suprise.gd" id="8_44k81"]
 [ext_resource type="AudioStream" uid="uid://hanqyy5x6sp5" path="res://SFX/UI/Click.ogg" id="8_lhhl3"]
@@ -77,7 +78,9 @@ THROWING_SWOOSH = NodePath("../MainSounds/THROWING_SWOOSH")
 [node name="Offset" type="Node2D" parent="." unique_id=1071341000]
 position = Vector2(552, 1322)
 
-[node name="Projectile" parent="Offset" unique_id=1415112124 instance=ExtResource("5_eplyt")]
+[node name="Projectile" parent="Offset" unique_id=1415112124 node_paths=PackedStringArray("weapon_selector") instance=ExtResource("5_eplyt")]
+weapon_selector = NodePath("../../WeaponSelector")
+current_texture = ExtResource("7_fvbj1")
 
 [node name="Impact" parent="." unique_id=914959569 node_paths=PackedStringArray("AXE_CANVAS", "AXE_CERAMIC", "AXE_GLASS", "AXE_STONE", "AXE_WOOD1", "AXE_WOOD2", "AXE_WOOD3", "KNIFE_WOOD", "KNIFE_CERAMIC", "KNIFE_GLASS", "KNIFE_STONE", "KNIFE_CANVAS1", "KNIFE_CANVAS2", "KNIFE_CANVAS3", "PICKAXE_CANVAS", "PICKAXE_CERAMIC", "PICKAXE_GLASS", "PICKAXE_WOOD", "PICKAXE_STONE1", "PICKAXE_STONE2", "PICKAXE_STONE3", "THIS_FIIIIRE_IS_OUT_OF_CONTROL", "Paint1", "Paint2", "Paint3", "HAMMER_CANVAS", "HAMMER_CERAMIC1", "HAMMER_CERAMIC2", "HAMMER_CERAMIC3", "HAMMER_GLASS1", "HAMMER_GLASS2", "HAMMER_GLASS3", "HAMMER_STONE", "HAMMER_WOOD") instance=ExtResource("6_3x0rb")]
 AXE_CANVAS = NodePath("../MainSounds/WEAPONS/Axe/AxeCanvas")

@@ -20,6 +20,9 @@ config/name="Game Jam 2026"
 run/main_scene="uid://bqr1ap1ni10fj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+config/handheld/orientation=0
+config/size/viewport_height=960
+config/size/viewport_width=540
 
 [autoload]
 
@@ -31,6 +34,7 @@ window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [physics]
 

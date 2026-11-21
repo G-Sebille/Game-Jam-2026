@@ -1,5 +1,4 @@
 extends Resource
-
 class_name WeaponResource
 
 @export var type : Gm.arme
