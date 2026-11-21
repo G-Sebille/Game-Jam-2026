@@ -28,10 +28,6 @@ position = Vector2(45.41047, 94.56293)
 scale = Vector2(1, 1.0000004)
 shape = SubResource("RectangleShape2D_301pc")
 
-[node name="Upscaler" type="Node2D" parent="." unique_id=811318374]
-position = Vector2(501, 932)
-scale = Vector2(3, 3)
-
 [node name="Breaker" parent="." unique_id=1054678342 instance=ExtResource("4_2o7fp")]
 position = Vector2(501, 932)
 scale = Vector2(5, 5)
