@@ -15,7 +15,9 @@ signal contact(oeuvre_type : Gm.art, pos : Vector2)
 
 @export var collision_shape : CollisionShape2D
 
-var can_damage : bool = true
+@export var timer : Timer
+
+var can_damage : bool = false
 
 func update_texture(new_tex : Texture2D) -> void:
 	sprite_2d.texture = new_tex
@@ -56,36 +58,43 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 		can_damage = false
 
 func launch(target_position : Vector2) -> void:
-	self.current_weapon = weapon_selector.current_weapon
-	print("test")
-	animation_player.play(&"launch")
-	
-	if current_weapon.id == "match" :
-		var new_shape : CircleShape2D = CircleShape2D.new()
-		new_shape.radius = 800
+	if not can_damage:
+		self.current_weapon = weapon_selector.current_weapon
+		print("test")
+		animation_player.play(&"launch")
 		
-		collision_shape.shape = new_shape
-	else:
-		var new_shape : CircleShape2D = CircleShape2D.new()
-		new_shape.radius = 80
+		if current_weapon.id == "match" :
+			var new_shape : CircleShape2D = CircleShape2D.new()
+			new_shape.radius = 800
+			
+			collision_shape.shape = new_shape
+			
+			timer.start()
+		else:
+			var new_shape : CircleShape2D = CircleShape2D.new()
+			new_shape.radius = 80
+			
+			collision_shape.shape = new_shape
+			
+
 		
-		collision_shape.shape = new_shape
+		var anim : Animation = animation_player.get_animation("launch")
+		var track_idx : int = anim.find_track("Projectile:position:x",Animation.TYPE_BEZIER)
 		
-		$"../../LevelManager".nextLevel()
-	
-	var anim : Animation = animation_player.get_animation("launch")
-	var track_idx : int = anim.find_track("Projectile:position:x",Animation.TYPE_BEZIER)
-	
-	var new_value : Array = anim.track_get_key_value(track_idx,2)
-	
-	new_value[0] = target_position.x;
-	print(new_value)
-	
-	anim.track_set_key_value(track_idx,2,new_value)
-	
-	track_idx = anim.find_track("Projectile:position:y",Animation.TYPE_BEZIER)
-	
-	print(anim.track_get_key_value(track_idx,2))
-	new_value[0] = target_position.y;
-	
-	anim.track_set_key_value(anim.find_track("Projectile:position:y",Animation.TYPE_BEZIER),2,new_value)
+		var new_value : Array = anim.track_get_key_value(track_idx,2)
+		
+		new_value[0] = target_position.x;
+		print(new_value)
+		
+		anim.track_set_key_value(track_idx,2,new_value)
+		
+		track_idx = anim.find_track("Projectile:position:y",Animation.TYPE_BEZIER)
+		
+		print(anim.track_get_key_value(track_idx,2))
+		new_value[0] = target_position.y;
+		
+		anim.track_set_key_value(anim.find_track("Projectile:position:y",Animation.TYPE_BEZIER),2,new_value)
+		can_damage = true
+
+func _on_transition_timer_timeout() -> void:
+	$"../../LevelManager".nextLevel()

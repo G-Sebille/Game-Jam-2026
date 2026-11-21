@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_ke8tq")
+type = 3
 id = "axe"
 texture = ExtResource("2_a0jn5")
 name = "Axe"
