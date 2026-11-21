@@ -107,8 +107,7 @@ func spawn_paticules(oeuvre_type : Gm.art, pos : Vector2) -> void:
 					fire.global_position = pos
 					fire.emitting = true
 				_ :
-					canvas.global_position = pos
-					canvas.emitting = true
+					pass
 		Gm.art.Statue:
 			match current_weapon:
 				Gm.arme.Allumette:
