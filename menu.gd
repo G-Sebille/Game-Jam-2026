@@ -2,6 +2,8 @@ extends Control
 
 @export var slide_duration: float = 0.75
 
+@export var Click_Menu: AudioStreamPlayer
+
 @onready var main_page: Control = $UI/Main
 @onready var settings_page: Control = $UI/Settings
 
@@ -27,9 +29,11 @@ func _ready() -> void:
 
 func _on_settings_button_pressed() -> void:
 	_slide(main_page, settings_page, 1)
+	Click_Menu.play()
 
 func _on_back_button_pressed() -> void:
 	_slide(settings_page, main_page, -1)
+	Click_Menu.play()
 
 func _slide(from_page: Control, to_page: Control, dir: int) -> void:
 	if _busy:
@@ -54,13 +58,16 @@ func _on_slide_finished(from_page: Control) -> void:
 func _on_fullscreen_check_box_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		Click_Menu.play()
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		Click_Menu.play()
 
 # je n'ai aucune idée de si cette partie marche mais az
 func _on_volume_slider_value_changed(value: float) -> void:
 	saved_volume = value
 	_apply_volume(value)
+	Click_Menu.play()
 
 func _apply_volume(value: float) -> void:
 	volume_label.text = "Volume : %d" % int(value)

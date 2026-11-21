@@ -14,9 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://dvurak6md5i5h" path="res://asset/piocghe.png" id="12_m1wcp"]
 [ext_resource type="Texture2D" uid="uid://ndxb6hy8h4ge" path="res://asset_sprite/boule_ou_une_couille.png" id="12_n0mjx"]
 [ext_resource type="Texture2D" uid="uid://d4bac2adwtj50" path="res://asset/allumette_de_Larry_le_malicieux.png" id="14_n0mjx"]
+[ext_resource type="AudioStream" uid="uid://v13vn0ulwc85" path="res://SFX/UI/Change_Weapon_Left.ogg" id="15_n6gwp"]
+[ext_resource type="AudioStream" uid="uid://b17j6rt3ycr18" path="res://SFX/UI/Change_Weapon_Right.ogg" id="16_h67j8"]
 
-[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("label", "button_R", "button_L", "center_Sprite", "splash_Ball", "pickaxe", "fire_stick")]
+[node name="WeaponSelector" type="Node2D" unique_id=63092402 node_paths=PackedStringArray("WEAPON_LEFT", "WEAPON_RIGHT", "label", "button_R", "button_L", "center_Sprite", "splash_Ball", "pickaxe", "fire_stick")]
 script = ExtResource("1_50u1q")
+WEAPON_LEFT = NodePath("WEAPON_LEFT")
+WEAPON_RIGHT = NodePath("WEAPON_RIGHT")
 weapon_array = Array[ExtResource("2_to571")]([ExtResource("3_kce7c"), ExtResource("4_fdety"), ExtResource("5_hostu"), ExtResource("6_juibk"), ExtResource("7_4x8mp"), ExtResource("8_n0mjx")])
 label = NodePath("Label")
 button_R = NodePath("Button_right")
@@ -68,6 +72,14 @@ texture = ExtResource("12_m1wcp")
 position = Vector2(604, 863)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_n0mjx")
+
+[node name="WEAPON_LEFT" type="AudioStreamPlayer" parent="." unique_id=650363166]
+stream = ExtResource("15_n6gwp")
+bus = &"UI"
+
+[node name="WEAPON_RIGHT" type="AudioStreamPlayer" parent="." unique_id=103943437]
+stream = ExtResource("16_h67j8")
+bus = &"UI"
 
 [connection signal="pressed" from="Button_right" to="." method="_on_button_right_pressed"]
 [connection signal="pressed" from="Button_left" to="." method="_on_button_left_pressed"]

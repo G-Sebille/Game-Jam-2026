@@ -2,6 +2,8 @@ extends Node2D
 
 @export var swipe_end_above_y : Marker2D
 
+@export var THROWING_SWOOSH: AudioStreamPlayer
+
 var pos_start : Vector2
 var swapping : bool = false
 
@@ -15,6 +17,7 @@ func _input(event):
 				print(event.position.y)
 				print(swipe_end_above_y.global_position.y)
 				if event.position.y < swipe_end_above_y.global_position.y:
+					THROWING_SWOOSH.play()
 					swap_effected.emit(event.position - pos_start)
 					print("SwapFinished")
 				else :
