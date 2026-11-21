@@ -58,23 +58,37 @@ func IMPACT(pos : Vector2) -> bool:
 		Gm.art.Peinture :
 			match current_weapon :
 				Gm.arme.Marteau :
-					#if Gm.life = 3 : 
-					#	son
+					HAMMER_CANVAS.play()
 					spawn_paticules(Gm.art.Peinture, pos)
 					return false
 				Gm.arme.Couteau :
+					if Gm.life == 3 :
+						KNIFE_CANVAS1.play()
+					elif Gm.life == 2 :
+						KNIFE_CANVAS2.play()
+					else :
+						KNIFE_CANVAS3.play()
 					spawn_paticules(Gm.art.Peinture, pos)
 					return true
 				Gm.arme.Allumette :
+					THIS_FIIIIRE_IS_OUT_OF_CONTROL.play()
 					spawn_paticules(Gm.art.Peinture, pos)
 					return true
 				Gm.arme.Hache :
+					AXE_CANVAS.play()
 					spawn_paticules(Gm.art.Peinture, pos)
 					return false
 				Gm.arme.Pioche :
+					PICKAXE_CANVAS.play()
 					spawn_paticules(Gm.art.Peinture, pos)
 					return false
 				Gm.arme.Peinture :
+					if Gm.life == 3 :
+						Paint1.play()
+					elif Gm.life == 2 :
+						Paint2.play()
+					else :
+						Paint3.play()
 					spawn_paticules(Gm.art.Peinture, pos)
 					return true
 					
@@ -82,64 +96,113 @@ func IMPACT(pos : Vector2) -> bool:
 			print("Statue")
 			match current_weapon :
 				Gm.arme.Marteau :
-					print("Statue")
+					HAMMER_STONE.play()
 					spawn_paticules(Gm.art.Statue, pos)
 					return false
 				Gm.arme.Couteau :
+					KNIFE_STONE.play()
 					spawn_paticules(Gm.art.Statue, pos)
 					return true
 				Gm.arme.Allumette :
+					THIS_FIIIIRE_IS_OUT_OF_CONTROL.play()
 					spawn_paticules(Gm.art.Statue, pos)
 					return true
 				Gm.arme.Hache :
+					AXE_STONE.play()
 					spawn_paticules(Gm.art.Statue, pos)
 					return false
 				Gm.arme.Pioche :
+					if Gm.life == 3 :
+						PICKAXE_STONE1.play()
+					elif Gm.life == 2 :
+						PICKAXE_STONE2.play()
+						Paint2.play()
+					else :
+						PICKAXE_STONE3.play()
+						Paint3.play()
 					spawn_paticules(Gm.art.Statue, pos)
 					return false
 				Gm.arme.Peinture :
+					if Gm.life == 3 :
+						Paint1.play()
+					elif Gm.life == 2 :
+						Paint2.play()
+					else :
+						Paint3.play()
 					spawn_paticules(Gm.art.Statue, pos)
 					return true
 					
 		Gm.art.Vase :
 			match current_weapon :
 				Gm.arme.Marteau :
+					if Gm.life == 3 :
+						HAMMER_CERAMIC1.play()
+					elif Gm.life == 2 :
+						HAMMER_CERAMIC2.play()
+					else :
+						HAMMER_CERAMIC3.play()
 					spawn_paticules(Gm.art.Vase,pos)
 					return false
 				Gm.arme.Couteau :
+					KNIFE_CERAMIC.play()
 					spawn_paticules(Gm.art.Vase,pos)
 					return true
 				Gm.arme.Allumette :
+					THIS_FIIIIRE_IS_OUT_OF_CONTROL.play()
 					spawn_paticules(Gm.art.Vase,pos)
 					return true
 				Gm.arme.Hache :
+					AXE_CERAMIC.play()
 					spawn_paticules(Gm.art.Vase,pos)
 					return false
 				Gm.arme.Pioche :
+					PICKAXE_CERAMIC.play()
 					spawn_paticules(Gm.art.Vase,pos)
 					return false
 				Gm.arme.Peinture :
+					if Gm.life == 3 :
+						Paint1.play()
+					elif Gm.life == 2 :
+						Paint2.play()
+					else :
+						Paint3.play()
 					spawn_paticules(Gm.art.Vase,pos)
 					return true
 					
 		Gm.art.Verre :
 			match current_weapon :
 				Gm.arme.Marteau :
+					if Gm.life == 3 :
+						HAMMER_GLASS1.play()
+					elif Gm.life == 2 :
+						HAMMER_GLASS2.play()
+					else :
+						HAMMER_GLASS3.play()
 					spawn_paticules(Gm.art.Verre,pos)
 					return false
 				Gm.arme.Couteau :
+					KNIFE_GLASS.play()
 					spawn_paticules(Gm.art.Verre,pos)
 					return true
 				Gm.arme.Allumette :
+					THIS_FIIIIRE_IS_OUT_OF_CONTROL.play()
 					spawn_paticules(Gm.art.Verre,pos)
 					return true
 				Gm.arme.Hache :
+					AXE_GLASS.play()
 					spawn_paticules(Gm.art.Verre,pos)
 					return false
 				Gm.arme.Pioche :
+					PICKAXE_GLASS.play()
 					spawn_paticules(Gm.art.Verre,pos)
 					return false
 				Gm.arme.Peinture :
+					if Gm.life == 3 :
+						Paint1.play()
+					elif Gm.life == 2 :
+						Paint2.play()
+					else :
+						Paint3.play()
 					spawn_paticules(Gm.art.Verre,pos)
 					return true
 					
