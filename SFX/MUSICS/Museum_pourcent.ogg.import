@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Museum_pourcent.ogg-d094e48892cd96d090a61f15d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
