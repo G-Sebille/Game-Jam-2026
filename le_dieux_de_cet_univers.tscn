@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dxvg0b8esytf4" path="res://swipe.tscn" id="4_7fwwh"]
 [ext_resource type="PackedScene" uid="uid://b7ew7eqachgfn" path="res://game/launcher/projectile.tscn" id="5_eplyt"]
 [ext_resource type="PackedScene" uid="uid://tyb7ah6aj1ea" path="res://Impact.tscn" id="6_3x0rb"]
+[ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset_sprite/confettiseul.png" id="7_lhhl3"]
+[ext_resource type="Script" uid="uid://io8aa2jorkks" path="res://victory_suprise.gd" id="8_44k81"]
 [ext_resource type="AudioStream" uid="uid://hanqyy5x6sp5" path="res://SFX/UI/Click.ogg" id="8_lhhl3"]
 [ext_resource type="AudioStream" uid="uid://boqvdur2rpy46" path="res://SFX/UI/THROWING_SWOOSH.ogg" id="9_44k81"]
 [ext_resource type="AudioStream" uid="uid://dsp2vdy3ueeis" path="res://SFX/AXE/AXE_CANVAS.ogg" id="10_ne11v"]
@@ -45,6 +47,10 @@
 [ext_resource type="AudioStream" uid="uid://c6s2xhvhgc74h" path="res://SFX/PICKAXE/PICKAXE_STONE_3.ogg" id="30_y4yho"]
 [ext_resource type="AudioStream" uid="uid://dbn8nb5urmbx0" path="res://SFX/MUSICS/Museum_pourcent.ogg" id="40_0s4dq"]
 [ext_resource type="AudioStream" uid="uid://bhdaijikjoodg" path="res://SFX/MUSICS/Museum_pourcent_drums.ogg" id="41_64kju"]
+
+[sub_resource type="Gradient" id="Gradient_mhmdy"]
+offsets = PackedFloat32Array(0, 0.18518518, 0.38271606, 0.6728395, 0.83950615)
+colors = PackedColorArray(1, 0, 0, 1, 0.8816565, 0.61919326, 0, 1, 0.33333334, 1, 0.9764706, 1, 0.72933257, 0.36539465, 0.9722026, 1, 0.9568214, 0.00083420216, 0.9697508, 1)
 
 [node name="Le Dieux de cet Univers" type="Node" unique_id=997471926]
 
@@ -106,6 +112,32 @@ HAMMER_GLASS2 = NodePath("../MainSounds/WEAPONS/Hammer/HammerGlass2")
 HAMMER_GLASS3 = NodePath("../MainSounds/WEAPONS/Hammer/HammerGlass3")
 HAMMER_STONE = NodePath("../MainSounds/WEAPONS/Hammer/HammerStone")
 HAMMER_WOOD = NodePath("../MainSounds/WEAPONS/Hammer/HammerWood")
+
+[node name="victory_suprise" type="CPUParticles2D" parent="." unique_id=1943947202]
+position = Vector2(528, 884)
+emitting = false
+amount = 100
+texture = ExtResource("7_lhhl3")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.32
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 178.52
+initial_velocity_max = 666.72
+angular_velocity_min = -142.57
+angular_velocity_max = 199.6
+tangential_accel_min = -35.64
+color_initial_ramp = SubResource("Gradient_mhmdy")
+hue_variation_min = -0.65
+hue_variation_max = 0.04
+script = ExtResource("8_44k81")
+
+[connection signal="play" from="MainMenu" to="LevelManager" method="nextLevel"]
+[connection signal="swap_effected" from="Swipe" to="Offset/Projectile" method="launch"]
+[connection signal="contact" from="Offset/Projectile" to="Impact" method="IMPACT"]
 
 [node name="MainSounds" type="Node" parent="." unique_id=1761823566]
 
