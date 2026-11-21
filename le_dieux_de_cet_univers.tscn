@@ -31,7 +31,14 @@
 [ext_resource type="AudioStream" uid="uid://drr8qts3is1g5" path="res://SFX/HAMMER/HAMMER_CANVAS.ogg" id="23_hbwjc"]
 [ext_resource type="AudioStream" uid="uid://c0a6u3qpkslq4" path="res://SFX/KNIFE/KNIFE_CANVAS_3.ogg" id="23_kgfny"]
 [ext_resource type="AudioStream" uid="uid://cpsxbn0v673c" path="res://SFX/HAMMER/HAMMER_STONE.ogg" id="24_get8m"]
+[ext_resource type="AudioStream" uid="uid://c4bn8ce3w4rms" path="res://SFX/PICKAXE/PICKAXE_WOOD.ogg" id="24_yofn5"]
+[ext_resource type="AudioStream" uid="uid://dekpgnroxtkt5" path="res://SFX/PICKAXE/PICKAXE_CERAMIC.ogg" id="25_0s4dq"]
 [ext_resource type="AudioStream" uid="uid://dijobdg2moerg" path="res://SFX/HAMMER/HAMMER_WOOD.ogg" id="25_d61m7"]
+[ext_resource type="AudioStream" uid="uid://b4jf8b5epd1n0" path="res://SFX/PICKAXE/PICKAXE_GLASS.ogg" id="26_64kju"]
+[ext_resource type="AudioStream" uid="uid://cnwq7gc0bdcdl" path="res://SFX/PICKAXE/PICKAXE_CANVAS.ogg" id="27_8rkx8"]
+[ext_resource type="AudioStream" uid="uid://c0dh8dlmnh0fa" path="res://SFX/PICKAXE/PICKAXE_STONE_1.ogg" id="28_b1in3"]
+[ext_resource type="AudioStream" uid="uid://b2nbnprg628sc" path="res://SFX/PICKAXE/PICKAXE_STONE_2.ogg" id="29_vlk0k"]
+[ext_resource type="AudioStream" uid="uid://c6s2xhvhgc74h" path="res://SFX/PICKAXE/PICKAXE_STONE_3.ogg" id="30_y4yho"]
 
 [node name="Le Dieux de cet Univers" type="Node" unique_id=997471926]
 
@@ -139,34 +146,34 @@ bus = &"SFX"
 stream = ExtResource("23_kgfny")
 bus = &"SFX"
 
-[node name="Knife2" type="Node" parent="MainSounds/WEAPONS" unique_id=1740328086]
+[node name="Pickaxe" type="Node" parent="MainSounds/WEAPONS" unique_id=1740328086]
 
-[node name="PickaxeWood" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Knife2" unique_id=133306961]
-stream = ExtResource("17_get8m")
+[node name="PickaxeWood" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Pickaxe" unique_id=133306961]
+stream = ExtResource("24_yofn5")
 bus = &"SFX"
 
-[node name="PickaxeCeramic" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Knife2" unique_id=1699991783]
-stream = ExtResource("18_d61m7")
+[node name="PickaxeCeramic" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Pickaxe" unique_id=1699991783]
+stream = ExtResource("25_0s4dq")
 bus = &"SFX"
 
-[node name="PickaxeGlass" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Knife2" unique_id=875957520]
-stream = ExtResource("19_hryfg")
+[node name="PickaxeGlass" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Pickaxe" unique_id=875957520]
+stream = ExtResource("26_64kju")
 bus = &"SFX"
 
-[node name="PickaxeStone" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Knife2" unique_id=3330230]
-stream = ExtResource("20_0wb0b")
+[node name="PickaxeCanvas" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Pickaxe" unique_id=3330230]
+stream = ExtResource("27_8rkx8")
 bus = &"SFX"
 
-[node name="PickaxeCanvas1" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Knife2" unique_id=797067831]
-stream = ExtResource("21_x78mq")
+[node name="PickaxeStone1" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Pickaxe" unique_id=797067831]
+stream = ExtResource("28_b1in3")
 bus = &"SFX"
 
-[node name="PickaxeCanvas2" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Knife2" unique_id=2008496356]
-stream = ExtResource("22_0kb5i")
+[node name="PickaxeStone2" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Pickaxe" unique_id=2008496356]
+stream = ExtResource("29_vlk0k")
 bus = &"SFX"
 
-[node name="PickaxeCanvas3" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Knife2" unique_id=1251224936]
-stream = ExtResource("23_kgfny")
+[node name="PickaxeStone3" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Pickaxe" unique_id=1251224936]
+stream = ExtResource("30_y4yho")
 bus = &"SFX"
 
 [node name="Hammer" type="Node" parent="MainSounds/WEAPONS" unique_id=1607532202]
