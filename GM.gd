@@ -19,8 +19,11 @@ var current_protection_type : art
 
 var life : int = 3
 
+signal impact
+
 func loose_life() :
 	life -= 1
+	impact.emit()
 	if life <= 0 :
 		if use_protection :
 			use_protection = false

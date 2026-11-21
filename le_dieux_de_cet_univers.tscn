@@ -47,6 +47,9 @@
 [ext_resource type="AudioStream" uid="uid://c6s2xhvhgc74h" path="res://SFX/PICKAXE/PICKAXE_STONE_3.ogg" id="30_y4yho"]
 [ext_resource type="AudioStream" uid="uid://dbn8nb5urmbx0" path="res://SFX/MUSICS/Museum_pourcent.ogg" id="40_0s4dq"]
 [ext_resource type="AudioStream" uid="uid://bhdaijikjoodg" path="res://SFX/MUSICS/Museum_pourcent_drums.ogg" id="41_64kju"]
+[ext_resource type="Script" uid="uid://dncai6lw2c068" path="res://drums.gd" id="48_u3y7r"]
+[ext_resource type="AudioStream" uid="uid://cl5n1d2amu8t7" path="res://SFX/MUSICS/Winning.ogg" id="49_iojq3"]
+[ext_resource type="Script" uid="uid://bei52k7kaeg71" path="res://fanfare.gd" id="50_fvbj1"]
 
 [sub_resource type="Gradient" id="Gradient_mhmdy"]
 offsets = PackedFloat32Array(0, 0.18518518, 0.38271606, 0.6728395, 0.83950615)
@@ -59,7 +62,6 @@ z_index = 10
 Click_Menu = NodePath("../MainSounds/Click_Menu")
 
 [node name="LevelManager" parent="." unique_id=1947072356 node_paths=PackedStringArray("Click_Menu") instance=ExtResource("2_eplyt")]
-LevelList = Array[PackedScene]([ExtResource("3_7fwwh")])
 Click_Menu = NodePath("../MainSounds/Click_Menu")
 
 [node name="Level01" parent="LevelManager" unique_id=1952836479 instance=ExtResource("3_7fwwh")]
@@ -134,10 +136,6 @@ color_initial_ramp = SubResource("Gradient_mhmdy")
 hue_variation_min = -0.65
 hue_variation_max = 0.04
 script = ExtResource("8_44k81")
-
-[connection signal="play" from="MainMenu" to="LevelManager" method="nextLevel"]
-[connection signal="swap_effected" from="Swipe" to="Offset/Projectile" method="launch"]
-[connection signal="contact" from="Offset/Projectile" to="Impact" method="IMPACT"]
 
 [node name="MainSounds" type="Node" parent="." unique_id=1761823566]
 
@@ -311,6 +309,13 @@ volume_db = -80.0
 autoplay = true
 bus = &"Music"
 playback_type = 1
+script = ExtResource("48_u3y7r")
+
+[node name="Fanfare" type="AudioStreamPlayer" parent="." unique_id=1329241429]
+stream = ExtResource("49_iojq3")
+bus = &"SFX"
+script = ExtResource("50_fvbj1")
 
 [connection signal="play" from="MainMenu" to="LevelManager" method="nextLevel"]
 [connection signal="swap_effected" from="Swipe" to="Offset/Projectile" method="launch"]
+[connection signal="contact" from="Offset/Projectile" to="Impact" method="IMPACT"]

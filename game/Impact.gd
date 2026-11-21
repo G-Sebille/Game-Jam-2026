@@ -40,7 +40,6 @@ extends Node
 @export var HAMMER_STONE: AudioStreamPlayer
 @export var HAMMER_WOOD: AudioStreamPlayer
 
-var current_weapon = Gm.arme
 @export var fire : CPUParticles2D
 @export var glass : CPUParticles2D
 @export var victory : CPUParticles2D
