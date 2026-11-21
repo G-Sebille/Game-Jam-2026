@@ -6,16 +6,5 @@
 
 [node name="LevelManager" type="Node2D" unique_id=1947072356 node_paths=PackedStringArray("button")]
 script = ExtResource("1_ra81a")
-button = NodePath("Button")
+button = NodePath("")
 LevelList = Array[PackedScene]([ExtResource("2_v6rsx"), ExtResource("3_cgibc")])
-
-[node name="Button" type="Button" parent="." unique_id=1305882035]
-offset_left = 333.0
-offset_top = 232.0
-offset_right = 405.0
-offset_bottom = 299.0
-text = "Next
-Level"
-alignment = 0
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

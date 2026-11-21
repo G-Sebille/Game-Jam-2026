@@ -5,17 +5,18 @@ class_name Projectile
 
 @export var target_position : Vector2 = Vector2.ZERO
 
+@warning_ignore("unused_signal")
+signal contact(oeuvre_type : Gm.art, pos : Vector2)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	print(self.position)
 	
 	for area : Area2D in self.get_overlapping_areas():
 		area.area_entered.emit(self)
-
 	self.monitorable = true
 	for body in get_overlapping_bodies():
 		if body is DamageCell:
@@ -27,14 +28,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			body.z_index += 1
 			print(dir)
 			var force : float = randf_range(2,5)
-
 			body.apply_impulse(dir * force,self.position)
-			
-			
 
 
 
-func _on_button_pressed() -> void:
+func launch(Vector2) -> void:
 	animation_player.play(&"launch")
 	
 	var anim : Animation = animation_player.get_animation("launch")

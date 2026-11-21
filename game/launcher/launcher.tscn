@@ -1,186 +1,13 @@
 [gd_scene format=3 uid="uid://d31w8b2dou5p5"]
 
 [ext_resource type="Texture2D" uid="uid://pojxwqkn8trw" path="res://assets/tableau.png" id="1_uxn6g"]
-[ext_resource type="Script" uid="uid://bdcdjnebq0jqb" path="res://game/launcher/projectile.gd" id="2_rbo0u"]
-[ext_resource type="Texture2D" uid="uid://bs5ptslwcyfsi" path="res://icon.svg" id="3_xoiso"]
+[ext_resource type="PackedScene" uid="uid://b7ew7eqachgfn" path="res://game/launcher/projectile.tscn" id="2_rbo0u"]
 [ext_resource type="PackedScene" uid="uid://v6es5fvfghw0" path="res://game/breaker/breaker.tscn" id="4_xoiso"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_n5jfn"]
-radius = 63.126858
-
-[sub_resource type="Animation" id="Animation_sx2it"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Projectile:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Projectile:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(58, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Projectile:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Projectile:scale:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Projectile:scale:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Projectile/CollisionShape2D:disabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Projectile:monitorable")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_wu30d"]
-resource_name = "launch"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Projectile:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(-1, 0, 0, 0.083333336, 7.7926188, 45.75571, -0.18094009, -0.7921295, 0.15395977, 0.67401356, 15.330493, -0.3, 27.320602, 0, 0),
-"times": PackedFloat32Array(0, 0.5, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Projectile:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(47, 0, 0, 0.083333336, -4.1398926, 22.160645, -0.08062177, 8.977236, 0.19901174, -22.159962, -24.055, -0.19999999, 9.581199, 0, 0),
-"times": PackedFloat32Array(0, 0.5, 1)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Projectile:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Projectile:scale:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.465, -0.16666667, 0.08916666, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Projectile:scale:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.465, -0.16666667, 0.08916666, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Projectile/CollisionShape2D:disabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.93333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Projectile:monitorable")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.91),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1wio"]
-_data = {
-&"RESET": SubResource("Animation_sx2it"),
-&"launch": SubResource("Animation_wu30d")
-}
 
 [node name="Launcher" type="Node2D" unique_id=1402406496]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1440330055]
+visible = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("1_uxn6g")
@@ -188,19 +15,8 @@ region_enabled = true
 region_rect = Rect2(40, 34, 55, 70)
 region_filter_clip_enabled = true
 
-[node name="Projectile" type="Area2D" parent="." unique_id=778482420 node_paths=PackedStringArray("animation_player")]
+[node name="Projectile" parent="." unique_id=1415112124 instance=ExtResource("2_rbo0u")]
 position = Vector2(0, 58)
-collision_mask = 3
-monitorable = false
-script = ExtResource("2_rbo0u")
-animation_player = NodePath("../AnimationPlayer")
-target_position = Vector2(-10, -10)
-
-[node name="Sprite2D" type="Sprite2D" parent="Projectile" unique_id=109579206]
-texture = ExtResource("3_xoiso")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Projectile" unique_id=103425015]
-shape = SubResource("CircleShape2D_n5jfn")
 
 [node name="Button" type="Button" parent="." unique_id=1853873327]
 offset_left = -24.0
@@ -209,15 +25,9 @@ offset_right = 31.0
 offset_bottom = 144.0
 text = "TIRE!!!"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=705565808]
-libraries/ = SubResource("AnimationLibrary_j1wio")
-
 [node name="Breaker" parent="." unique_id=1054678342 instance=ExtResource("4_xoiso")]
 position = Vector2(-1, -70)
 sprite_division = Vector2i(10, 10)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1737035924]
 zoom = Vector2(2.02, 2.02)
-
-[connection signal="pressed" from="Button" to="Projectile" method="_on_button_pressed"]
-[connection signal="animation_finished" from="AnimationPlayer" to="Projectile" method="_on_animation_player_animation_finished"]

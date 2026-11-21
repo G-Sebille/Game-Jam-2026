@@ -11,6 +11,8 @@ extends Control
 var _tween: Tween
 var _busy := false
 
+signal play
+
 static var saved_volume: float = 50.0
 
 func _ready() -> void:
@@ -63,3 +65,8 @@ func _on_volume_slider_value_changed(value: float) -> void:
 func _apply_volume(value: float) -> void:
 	volume_label.text = "Volume : %d" % int(value)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value / 100.0))
+
+
+func _on_play_button_pressed() -> void:
+	play.emit()
+	queue_free()

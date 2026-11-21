@@ -8,13 +8,13 @@ var swapping : bool = false
 signal swap_effected(Vector2)
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and swapping:
 		event = event as InputEventMouseButton
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if !event.pressed :
 				print(event.position.y)
 				print(swipe_end_above_y.global_position.y)
-				if event.position.y < swipe_end_above_y.global_position.y :
+				if event.position.y < swipe_end_above_y.global_position.y:
 					swap_effected.emit(event.position - pos_start)
 					print("SwapFinished")
 				else :
