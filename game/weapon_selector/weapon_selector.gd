@@ -7,6 +7,8 @@ class_name Oeuvre
 #var ceramique = [Marteau, peinture, alumette] 
 var statue = [ ]
 
+@export var WEAPON_LEFT: AudioStreamPlayer
+@export var WEAPON_RIGHT: AudioStreamPlayer
 
 @export var weapon_array : Array[WeaponResource] =[]
 @export var label : Label
@@ -55,10 +57,12 @@ func update_img() -> void:
 	splash_Ball.texture = weapon_array[(current_index-2)%weapon_array.size()].texture
 
 func _on_button_right_pressed() -> void:
+	WEAPON_RIGHT.play()
 	select_weapon(true)
 	update_img()
 
 func _on_button_left_pressed() -> void:
+	WEAPON_LEFT.play()
 	select_weapon(false)
 	update_img()
 

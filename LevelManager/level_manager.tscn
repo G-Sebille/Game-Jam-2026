@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cdkkt7qmutoul" path="res://Levels/Level_02.tscn" id="3_5d1aq"]
 [ext_resource type="PackedScene" uid="uid://b2k2w0otyjd02" path="res://Levels/Scene_fin.tscn" id="4_b1ofh"]
 
-[node name="LevelManager" type="Node2D" unique_id=1947072356 node_paths=PackedStringArray("button")]
+[node name="LevelManager" type="Node2D" unique_id=1947072356 node_paths=PackedStringArray("Click_Menu")]
 script = ExtResource("1_ra81a")
 button = NodePath("")
 LevelList = Array[PackedScene]([ExtResource("2_re4hj"), ExtResource("3_5d1aq"), ExtResource("4_b1ofh")])
+Click_Menu = NodePath("")

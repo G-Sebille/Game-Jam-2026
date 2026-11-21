@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://djr54m5v00jj3" path="res://Check_box_empty.png" id="9_5qkn8"]
 [ext_resource type="Texture2D" uid="uid://cd3ehwew5nywm" path="res://tick.png" id="9_v0s1l"]
 
-[node name="MainMenu" type="Control" unique_id=859307019]
+[node name="MainMenu" type="Control" unique_id=859307019 node_paths=PackedStringArray("Click_Menu")]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -24,6 +24,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_uubjt")
+Click_Menu = NodePath("")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="." unique_id=773601818]
