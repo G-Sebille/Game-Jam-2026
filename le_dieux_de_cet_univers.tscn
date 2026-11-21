@@ -16,14 +16,18 @@
 [ext_resource type="AudioStream" uid="uid://crmkiaajagkci" path="res://SFX/AXE/AXE_WOOD_1.ogg" id="14_f5j2g"]
 [ext_resource type="AudioStream" uid="uid://dp8qhqu3bpcd5" path="res://SFX/AXE/AXE_WOOD_2.ogg" id="15_3ldij"]
 [ext_resource type="AudioStream" uid="uid://b6l3unqljhv1x" path="res://SFX/AXE/AXE_WOOD_3.ogg" id="16_dxok1"]
+[ext_resource type="AudioStream" uid="uid://bsgt0dqtylb3w" path="res://SFX/MATCH/MATCH.ogg" id="17_b1in3"]
 [ext_resource type="AudioStream" uid="uid://m4h2a3kg1ddx" path="res://SFX/KNIFE/KNIFE_WOOD.ogg" id="17_get8m"]
 [ext_resource type="AudioStream" uid="uid://cm2bju6xb3q7k" path="res://SFX/HAMMER/HAMMER_CERAMIC_1.ogg" id="17_xxm7q"]
 [ext_resource type="AudioStream" uid="uid://diq5n406ybhtb" path="res://SFX/KNIFE/KNIFE_CERAMIC.ogg" id="18_d61m7"]
 [ext_resource type="AudioStream" uid="uid://dfdp42xddw8ve" path="res://SFX/HAMMER/HAMMER_CERAMIC_2.ogg" id="18_tp7i7"]
+[ext_resource type="AudioStream" uid="uid://b02mtq1i3jra5" path="res://SFX/PAINT/PAINT_PAINT_1.ogg" id="18_vlk0k"]
 [ext_resource type="AudioStream" uid="uid://bqmgab2hxpaj3" path="res://SFX/KNIFE/KNIFE_GLASS.ogg" id="19_hryfg"]
 [ext_resource type="AudioStream" uid="uid://8h5hasd12x1n" path="res://SFX/HAMMER/HAMMER_CERAMIC_3.ogg" id="19_lrsck"]
+[ext_resource type="AudioStream" uid="uid://b2smfcb4abjvg" path="res://SFX/PAINT/PAINT_PAINT_2.ogg" id="19_y4yho"]
 [ext_resource type="AudioStream" uid="uid://b8wkah4yqr872" path="res://SFX/KNIFE/KNIFE_STONE.ogg" id="20_0wb0b"]
 [ext_resource type="AudioStream" uid="uid://2havnea0t66l" path="res://SFX/HAMMER/HAMMER_GLASS_1.ogg" id="20_r8xcx"]
+[ext_resource type="AudioStream" uid="uid://3cqrlmdfvldo" path="res://SFX/PAINT/PAINT_PAINT_3.ogg" id="20_v2h8i"]
 [ext_resource type="AudioStream" uid="uid://c5m64ihvvswix" path="res://SFX/HAMMER/HAMMER_GLASS_2.ogg" id="21_6bopm"]
 [ext_resource type="AudioStream" uid="uid://ctwo7e6u07gw3" path="res://SFX/KNIFE/KNIFE_CANVAS_1.ogg" id="21_x78mq"]
 [ext_resource type="AudioStream" uid="uid://c1tyeycelij6o" path="res://SFX/KNIFE/KNIFE_CANVAS_2.ogg" id="22_0kb5i"]
@@ -67,7 +71,7 @@ position = Vector2(552, 1322)
 
 [node name="Projectile" parent="Offset" unique_id=1415112124 instance=ExtResource("5_eplyt")]
 
-[node name="Impact" parent="." unique_id=914959569 node_paths=PackedStringArray("AXE_CANVAS", "AXE_CERAMIC", "AXE_GLASS", "AXE_STONE", "AXE_WOOD1", "AXE_WOOD2", "AXE_WOOD3") instance=ExtResource("6_3x0rb")]
+[node name="Impact" parent="." unique_id=914959569 node_paths=PackedStringArray("AXE_CANVAS", "AXE_CERAMIC", "AXE_GLASS", "AXE_STONE", "AXE_WOOD1", "AXE_WOOD2", "AXE_WOOD3", "KNIFE_WOOD", "KNIFE_CERAMIC", "KNIFE_GLASS", "KNIFE_STONE", "KNIFE_CANVAS1", "KNIFE_CANVAS2", "KNIFE_CANVAS3", "PICKAXE_CANVAS", "PICKAXE_CERAMIC", "PICKAXE_GLASS", "PICKAXE_WOOD", "PICKAXE_STONE1", "PICKAXE_STONE2", "PICKAXE_STONE3", "THIS_FIIIIRE_IS_OUT_OF_CONTROL", "Paint1", "Paint2", "Paint3", "HAMMER_CANVAS", "HAMMER_CERAMIC1", "HAMMER_CERAMIC2", "HAMMER_CERAMIC3", "HAMMER_GLASS1", "HAMMER_GLASS2", "HAMMER_GLASS3", "HAMMER_STONE", "HAMMER_WOOD") instance=ExtResource("6_3x0rb")]
 AXE_CANVAS = NodePath("../MainSounds/WEAPONS/Axe/AxeCanvas")
 AXE_CERAMIC = NodePath("../MainSounds/WEAPONS/Axe/AxeCeramic")
 AXE_GLASS = NodePath("../MainSounds/WEAPONS/Axe/AxeGlass")
@@ -75,6 +79,33 @@ AXE_STONE = NodePath("../MainSounds/WEAPONS/Axe/AxeStone")
 AXE_WOOD1 = NodePath("../MainSounds/WEAPONS/Axe/AxeWood1")
 AXE_WOOD2 = NodePath("../MainSounds/WEAPONS/Axe/AxeWood2")
 AXE_WOOD3 = NodePath("../MainSounds/WEAPONS/Axe/AxeWood3")
+KNIFE_WOOD = NodePath("../MainSounds/WEAPONS/Knife/KnifeWood")
+KNIFE_CERAMIC = NodePath("../MainSounds/WEAPONS/Knife/KnifeCeramic")
+KNIFE_GLASS = NodePath("../MainSounds/WEAPONS/Knife/KnifeGlass")
+KNIFE_STONE = NodePath("../MainSounds/WEAPONS/Knife/KnifeStone")
+KNIFE_CANVAS1 = NodePath("../MainSounds/WEAPONS/Knife/KnifeCanvas1")
+KNIFE_CANVAS2 = NodePath("../MainSounds/WEAPONS/Knife/KnifeCanvas2")
+KNIFE_CANVAS3 = NodePath("../MainSounds/WEAPONS/Knife/KnifeCanvas3")
+PICKAXE_CANVAS = NodePath("../MainSounds/WEAPONS/Pickaxe/PickaxeCanvas")
+PICKAXE_CERAMIC = NodePath("../MainSounds/WEAPONS/Pickaxe/PickaxeCeramic")
+PICKAXE_GLASS = NodePath("../MainSounds/WEAPONS/Pickaxe/PickaxeGlass")
+PICKAXE_WOOD = NodePath("../MainSounds/WEAPONS/Pickaxe/PickaxeWood")
+PICKAXE_STONE1 = NodePath("../MainSounds/WEAPONS/Pickaxe/PickaxeStone1")
+PICKAXE_STONE2 = NodePath("../MainSounds/WEAPONS/Pickaxe/PickaxeStone2")
+PICKAXE_STONE3 = NodePath("../MainSounds/WEAPONS/Pickaxe/PickaxeStone3")
+THIS_FIIIIRE_IS_OUT_OF_CONTROL = NodePath("../MainSounds/WEAPONS/Match/THIS_FIIIIIRE")
+Paint1 = NodePath("../MainSounds/WEAPONS/Paint/Paint1")
+Paint2 = NodePath("../MainSounds/WEAPONS/Paint/Paint2")
+Paint3 = NodePath("../MainSounds/WEAPONS/Paint/Paint3")
+HAMMER_CANVAS = NodePath("../MainSounds/WEAPONS/Hammer/HammerCanvas")
+HAMMER_CERAMIC1 = NodePath("../MainSounds/WEAPONS/Hammer/HammerCeramic")
+HAMMER_CERAMIC2 = NodePath("../MainSounds/WEAPONS/Hammer/HammerCeramic2")
+HAMMER_CERAMIC3 = NodePath("../MainSounds/WEAPONS/Hammer/HammerCeramic3")
+HAMMER_GLASS1 = NodePath("../MainSounds/WEAPONS/Hammer/HammerGlass")
+HAMMER_GLASS2 = NodePath("../MainSounds/WEAPONS/Hammer/HammerGlass2")
+HAMMER_GLASS3 = NodePath("../MainSounds/WEAPONS/Hammer/HammerGlass3")
+HAMMER_STONE = NodePath("../MainSounds/WEAPONS/Hammer/HammerStone")
+HAMMER_WOOD = NodePath("../MainSounds/WEAPONS/Hammer/HammerWood")
 
 [node name="MainSounds" type="Node" parent="." unique_id=1761823566]
 
@@ -116,6 +147,26 @@ bus = &"SFX"
 
 [node name="AxeWood3" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Axe" unique_id=268838713]
 stream = ExtResource("16_dxok1")
+bus = &"SFX"
+
+[node name="Match" type="Node" parent="MainSounds/WEAPONS" unique_id=1951366900]
+
+[node name="THIS_FIIIIIRE" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Match" unique_id=2101362271]
+stream = ExtResource("17_b1in3")
+bus = &"SFX"
+
+[node name="Paint" type="Node" parent="MainSounds/WEAPONS" unique_id=1003535295]
+
+[node name="Paint1" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Paint" unique_id=1255303994]
+stream = ExtResource("18_vlk0k")
+bus = &"SFX"
+
+[node name="Paint2" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Paint" unique_id=1466183244]
+stream = ExtResource("19_y4yho")
+bus = &"SFX"
+
+[node name="Paint3" type="AudioStreamPlayer" parent="MainSounds/WEAPONS/Paint" unique_id=836491053]
+stream = ExtResource("20_v2h8i")
 bus = &"SFX"
 
 [node name="Knife" type="Node" parent="MainSounds/WEAPONS" unique_id=577876317]
