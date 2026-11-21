@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b2k2w0otyjd02"]
+
+[ext_resource type="Texture2D" uid="uid://b1f1wqj70yu02" path="res://asset_sprite/Headlignes_lost_level.png" id="1_jq10w"]
+
+[node name="SceneFin" type="Node2D" unique_id=743906313]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1855737941]
+position = Vector2(541.5, 958.5)
+scale = Vector2(0.8428015, 0.88534445)
+texture = ExtResource("1_jq10w")
