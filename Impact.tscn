@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://tyb7ah6aj1ea"]
 
-[ext_resource type="Script" uid="uid://cv31dvan65jr5" path="res://game/Impact.gd" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset_sprite/confettiseul.png" id="2_epypp"]
-[ext_resource type="Texture2D" uid="uid://mkiiq1e6jjy1" path="res://asset_sprite/glass_frag.png" id="3_0hol4"]
-[ext_resource type="Texture2D" uid="uid://beeb1pm7bvqmt" path="res://asset_sprite/feubeta.png" id="4_0hol4"]
-[ext_resource type="Texture2D" uid="uid://b1tayapyqpx3j" path="res://asset_sprite/pottery_shard_particle.png" id="5_q6r6c"]
-[ext_resource type="Texture2D" uid="uid://bfd1qsos34wgd" path="res://asset_sprite/Statue_break_particule.png" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://cv31dvan65jr5" path="res://game/Impact.gd" id="1_cl8hn"]
+[ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset_sprite/confettiseul.png" id="2_1knb2"]
+[ext_resource type="Texture2D" uid="uid://mkiiq1e6jjy1" path="res://asset_sprite/glass_frag.png" id="3_mxv8r"]
+[ext_resource type="Texture2D" uid="uid://beeb1pm7bvqmt" path="res://asset_sprite/feubeta.png" id="4_mara0"]
+[ext_resource type="Texture2D" uid="uid://b1tayapyqpx3j" path="res://asset_sprite/pottery_shard_particle.png" id="5_4q474"]
+[ext_resource type="Texture2D" uid="uid://bfd1qsos34wgd" path="res://asset_sprite/Statue_break_particule.png" id="6_cvog6"]
 
 [sub_resource type="Gradient" id="Gradient_1m0bj"]
 offsets = PackedFloat32Array(0, 0.18518518, 0.38271606, 0.6728395, 0.83950615)
@@ -21,15 +21,18 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0.0053191558, -0.6179775), 0.0, 0.0, 0, 0, Vector2(0.25531915, -0.5280899), 0.0, 0.0, 0, 0, Vector2(0.64361703, -0.28089893), 0.0, 0.0, 0, 0, Vector2(0.79787236, 1), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[node name="Node2D" type="Node2D" unique_id=914959569 node_paths=PackedStringArray("glass", "victory")]
-script = ExtResource("1_wtcfe")
+[node name="Impact" type="Node2D" unique_id=914959569 node_paths=PackedStringArray("fire", "glass", "victory", "rock", "porcelain")]
+script = ExtResource("1_cl8hn")
+fire = NodePath("Fire_particules")
 glass = NodePath("glass_particules")
 victory = NodePath("victory_suprise")
+rock = NodePath("Rock")
+porcelain = NodePath("Porcelain")
 
 [node name="victory_suprise" type="CPUParticles2D" parent="." unique_id=1400039351]
 emitting = false
 amount = 100
-texture = ExtResource("2_epypp")
+texture = ExtResource("2_1knb2")
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
@@ -62,7 +65,7 @@ initial_velocity_max = 138.62
 position = Vector2(691, -1)
 emitting = false
 amount = 125
-texture = ExtResource("3_0hol4")
+texture = ExtResource("3_mxv8r")
 lifetime = 0.8
 one_shot = true
 explosiveness = 1.0
@@ -79,7 +82,7 @@ scale_amount_curve = SubResource("Curve_301pc")
 position = Vector2(277, 964)
 emitting = false
 amount = 200
-texture = ExtResource("4_0hol4")
+texture = ExtResource("4_mara0")
 lifetime = 3.0
 one_shot = true
 explosiveness = 0.4
@@ -96,7 +99,7 @@ hue_variation_curve = SubResource("Curve_0hol4")
 position = Vector2(174, -117)
 emitting = false
 amount = 10
-texture = ExtResource("5_q6r6c")
+texture = ExtResource("5_4q474")
 lifetime = 0.7
 one_shot = true
 explosiveness = 1.0
@@ -112,7 +115,7 @@ angle_max = 71.3
 position = Vector2(225, 155)
 emitting = false
 amount = 10
-texture = ExtResource("6_kdubu")
+texture = ExtResource("6_cvog6")
 lifetime = 0.7
 one_shot = true
 explosiveness = 1.0

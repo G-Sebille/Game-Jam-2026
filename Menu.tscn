@@ -211,6 +211,7 @@ offset_transform_position = Vector2(-32, 32)
 offset_transform_scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_ylpcl")
 
+[connection signal="pressed" from="UI/Main/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI/Main/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="UI/Settings/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="toggled" from="UI/Settings/MarginContainer/VBoxContainer/FullscreenContainer/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]

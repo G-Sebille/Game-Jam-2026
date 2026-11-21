@@ -8,11 +8,22 @@
 
 config_version=5
 
+[animation]
+
+warnings/check_invalid_skeleton_modifier_node_paths=false
+warnings/check_invalid_track_paths=false
+warnings/check_angle_interpolation_type_conflicting=false
+
 [application]
 
 config/name="Game Jam 2026"
+run/main_scene="uid://bqr1ap1ni10fj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Gm="*uid://dnryayd65gpp0"
 
 [display]
 
