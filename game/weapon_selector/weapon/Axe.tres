@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://bbrk2onk012nf"]
+
+[ext_resource type="Script" uid="uid://tv7jm2hi3oyi" path="res://game/weapon_selector/weapon/weapon_resource.gd" id="1_ke8tq"]
+[ext_resource type="Texture2D" uid="uid://ph3jsseksju" path="res://asset/Sprite_axe_presentation.png" id="2_a0jn5"]
+
+[resource]
+script = ExtResource("1_ke8tq")
+id = "axe"
+texture = ExtResource("2_a0jn5")
+name = "Axe"
+metadata/_custom_type_script = "uid://tv7jm2hi3oyi"

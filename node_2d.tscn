@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://tyb7ah6aj1ea"]
+
+[ext_resource type="Script" uid="uid://cv31dvan65jr5" path="res://game/Impact.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://0mjwcleet7wj" path="res://asset_sprite/confettiseul.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://mkiiq1e6jjy1" path="res://asset_sprite/glass_frag.png" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://beeb1pm7bvqmt" path="res://asset_sprite/feubeta.png" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://b1tayapyqpx3j" path="res://asset_sprite/pottery_shard_particle.png" id="5_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://bfd1qsos34wgd" path="res://asset_sprite/Statue_break_particule.png" id="6_kdubu"]
+
+[sub_resource type="Gradient" id="Gradient_1m0bj"]
+offsets = PackedFloat32Array(0, 0.18518518, 0.38271606, 0.6728395, 0.83950615)
+colors = PackedColorArray(1, 0, 0, 1, 0.8816565, 0.61919326, 0, 1, 0.33333334, 1, 0.9764706, 1, 0.72933257, 0.36539465, 0.9722026, 1, 0.9568214, 0.00083420216, 0.9697508, 1)
+
+[sub_resource type="Curve" id="Curve_301pc"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7074468, 0.9662922), 0.0, 0.0, 0, 0, Vector2(0.98936176, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_0hol4"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.0053191558, -0.6179775), 0.0, 0.0, 0, 0, Vector2(0.25531915, -0.5280899), 0.0, 0.0, 0, 0, Vector2(0.64361703, -0.28089893), 0.0, 0.0, 0, 0, Vector2(0.79787236, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Node2D" type="Node2D" unique_id=914959569 node_paths=PackedStringArray("glass", "victory")]
+script = ExtResource("1_wtcfe")
+glass = NodePath("glass_particules")
+victory = NodePath("victory_suprise")
+
+[node name="victory_suprise" type="CPUParticles2D" parent="." unique_id=1400039351]
+emitting = false
+amount = 100
+texture = ExtResource("2_epypp")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.32
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 178.52
+initial_velocity_max = 666.72
+angular_velocity_min = -142.57
+angular_velocity_max = 199.6
+tangential_accel_min = -35.64
+color_initial_ramp = SubResource("Gradient_1m0bj")
+hue_variation_min = -0.65
+hue_variation_max = 0.04
+
+[node name="Lunch" type="CPUParticles2D" parent="." unique_id=796463617]
+position = Vector2(258, -27)
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.2
+direction = Vector2(0, 0)
+spread = 135.0
+initial_velocity_max = 138.62
+
+[node name="glass_particules" type="CPUParticles2D" parent="." unique_id=397634368]
+position = Vector2(691, -1)
+emitting = false
+amount = 125
+texture = ExtResource("3_0hol4")
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+randomness = 0.2
+spread = 180.0
+gravity = Vector2(150, 980)
+initial_velocity_min = 50.0
+initial_velocity_max = 400.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_301pc")
+
+[node name="Fire_particules" type="CPUParticles2D" parent="." unique_id=917041735]
+position = Vector2(277, 964)
+emitting = false
+amount = 200
+texture = ExtResource("4_0hol4")
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.4
+randomness = 0.1
+spread = 180.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 9.9
+initial_velocity_max = 227.72
+damping_max = 19.802
+angle_curve = SubResource("Curve_301pc")
+hue_variation_curve = SubResource("Curve_0hol4")
+
+[node name="Porcelain" type="CPUParticles2D" parent="." unique_id=727449233]
+position = Vector2(174, -117)
+emitting = false
+amount = 10
+texture = ExtResource("5_q6r6c")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.2
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 800)
+initial_velocity_max = 400.0
+angle_min = -213.9
+angle_max = 71.3
+
+[node name="Rock" type="CPUParticles2D" parent="." unique_id=2081248815]
+position = Vector2(225, 155)
+emitting = false
+amount = 10
+texture = ExtResource("6_kdubu")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.2
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 800)
+initial_velocity_max = 400.0
+angle_min = -200.0
+angle_max = 15.0
