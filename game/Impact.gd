@@ -8,7 +8,7 @@ extends Node
 @export var AXE_WOOD2: AudioStreamPlayer
 @export var AXE_WOOD3: AudioStreamPlayer
 
-@export var KNIFE_CANVAS: AudioStreamPlayer
+@export var KNIFE_WOOD: AudioStreamPlayer
 @export var KNIFE_CERAMIC: AudioStreamPlayer
 @export var KNIFE_GLASS: AudioStreamPlayer
 @export var KNIFE_STONE: AudioStreamPlayer
@@ -23,6 +23,12 @@ extends Node
 @export var PICKAXE_STONE1: AudioStreamPlayer
 @export var PICKAXE_STONE2: AudioStreamPlayer
 @export var PICKAXE_STONE3: AudioStreamPlayer
+
+@export var THIS_FIIIIRE_IS_OUT_OF_CONTROL: AudioStreamPlayer
+
+@export var Paint1: AudioStreamPlayer
+@export var Paint2: AudioStreamPlayer
+@export var Paint3: AudioStreamPlayer
 
 @export var HAMMER_CANVAS: AudioStreamPlayer
 @export var HAMMER_CERAMIC1: AudioStreamPlayer
