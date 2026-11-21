@@ -21,7 +21,7 @@ signal weapon_changed(new_weapon : WeaponResource)
 @export var fire_stick : Sprite2D
 
 var sprite_tab : Array[Sprite2D] = []
-var current_weapon : WeaponResource
+@export var current_weapon : WeaponResource
 var current_index : int =0
 var is_swipping_right : bool = false
 

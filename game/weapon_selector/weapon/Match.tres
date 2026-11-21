@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_76xmi")
+type = 2
 id = "match"
 texture = ExtResource("2_1hdch")
 name = "Match"

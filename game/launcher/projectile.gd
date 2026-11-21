@@ -11,6 +11,10 @@ signal contact(oeuvre_type : Gm.art, pos : Vector2)
 
 @export var current_texture : Texture2D = null
 
+@export var current_weapon : WeaponResource = null
+
+@export var collision_shape : CollisionShape2D
+
 var can_damage : bool = true
 
 func update_texture(new_tex : Texture2D) -> void:
@@ -52,8 +56,22 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 		can_damage = false
 
 func launch(target_position : Vector2) -> void:
+	self.current_weapon = weapon_selector.current_weapon
 	print("test")
 	animation_player.play(&"launch")
+	
+	if current_weapon.id == "match" :
+		var new_shape : CircleShape2D = CircleShape2D.new()
+		new_shape.radius = 800
+		
+		collision_shape.shape = new_shape
+	else:
+		var new_shape : CircleShape2D = CircleShape2D.new()
+		new_shape.radius = 80
+		
+		collision_shape.shape = new_shape
+		
+		$"../../LevelManager".nextLevel()
 	
 	var anim : Animation = animation_player.get_animation("launch")
 	var track_idx : int = anim.find_track("Projectile:position:x",Animation.TYPE_BEZIER)
