@@ -21,7 +21,7 @@ func create_cells() -> void:
 			new_cell.name = str(x) + " " + str(y)
 			cell_parent.add_child(new_cell)
 			new_cell.texture = texture
-			new_cell.create(top_position + offset*Vector2(x,y)*1.01, offset, offset*Vector2(x,y))
+			new_cell.create(top_position + offset*Vector2(x,y)*1.01, offset, offset*Vector2(x,y), global_scale)
 			
 			new_cell.visible = true
 			new_cell.owner = $CellParent

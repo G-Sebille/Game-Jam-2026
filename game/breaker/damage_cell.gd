@@ -14,11 +14,12 @@ class_name DamageCell
 var start_position : Vector2 = Vector2.ZERO
 var can_move : bool = false
 
-func create(top_pos : Vector2, size : Vector2, offset : Vector2) -> void:
+func create(top_pos : Vector2, size : Vector2, offset : Vector2, give_scale : Vector2) -> void:
 	self.top_position = top_pos
 	self.cell_size = size
 	self.position = top_position + (cell_size/2)
 	start_position = self.position
+	sprite_2d.scale = give_scale
 	sprite_2d.texture = texture
 	sprite_2d.region_rect = Rect2(offset,cell_size)
 	var new_rect : RectangleShape2D = RectangleShape2D.new()

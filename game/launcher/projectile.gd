@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	print(self.position)
-	
+	# C'est temporaire avant que tu merge ton code
 	for area : Area2D in self.get_overlapping_areas():
 		area.area_entered.emit(self)
 	self.monitorable = true

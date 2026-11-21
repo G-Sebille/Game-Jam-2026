@@ -8,7 +8,7 @@ var current_weapon = Gm.arme
 @export var rock : CPUParticles2D
 @export var porcelain : CPUParticles2D
 
-func IMPACT(oeuvre_type : Gm.art,pos : Vector2) -> bool:
+func IMPACT(oeuvre_type : Gm.art, pos : Vector2) -> bool:
 	var sender = false
 	match oeuvre_type :
 		Gm.art.Peinture :

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bnc4ghf55tix8" path="res://Menu.tscn" id="1_h46e1"]
 [ext_resource type="PackedScene" uid="uid://cme4nqu1ujx4o" path="res://LevelManager/level_manager.tscn" id="2_eplyt"]
 [ext_resource type="PackedScene" uid="uid://digvt7e3rpcyy" path="res://game/weapon_selector/Weapon_selector.tscn" id="3_3x0rb"]
+[ext_resource type="PackedScene" uid="uid://beahmfs4au5m3" path="res://Levels/Level_01.tscn" id="3_7fwwh"]
 [ext_resource type="PackedScene" uid="uid://dxvg0b8esytf4" path="res://swipe.tscn" id="4_7fwwh"]
 [ext_resource type="PackedScene" uid="uid://b7ew7eqachgfn" path="res://game/launcher/projectile.tscn" id="5_eplyt"]
 [ext_resource type="PackedScene" uid="uid://tyb7ah6aj1ea" path="res://Impact.tscn" id="6_3x0rb"]
@@ -10,10 +11,12 @@
 [node name="Le Dieux de cet Univers" type="Node" unique_id=997471926]
 
 [node name="MainMenu" parent="." unique_id=859307019 instance=ExtResource("1_h46e1")]
-visible = false
 z_index = 10
 
 [node name="LevelManager" parent="." unique_id=1947072356 instance=ExtResource("2_eplyt")]
+LevelList = Array[PackedScene]([ExtResource("3_7fwwh")])
+
+[node name="Level01" parent="LevelManager" unique_id=1952836479 instance=ExtResource("3_7fwwh")]
 
 [node name="WeaponSelector" parent="." unique_id=63092402 instance=ExtResource("3_3x0rb")]
 position = Vector2(3, 0)
@@ -29,4 +32,5 @@ position = Vector2(552, 1322)
 
 [node name="Impact" parent="." unique_id=914959569 instance=ExtResource("6_3x0rb")]
 
+[connection signal="play" from="MainMenu" to="LevelManager" method="nextLevel"]
 [connection signal="swap_effected" from="Swipe" to="Offset/Projectile" method="launch"]
