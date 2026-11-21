@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdkkt7qmutoul"]
 
 [ext_resource type="Texture2D" uid="uid://b5pqw7o4c66p1" path="res://mur1.png" id="1_ce6vd"]
+[ext_resource type="Script" uid="uid://dleyu838auq3d" path="res://Levels/level.gd" id="1_hhbg7"]
 [ext_resource type="PackedScene" uid="uid://v6es5fvfghw0" path="res://game/breaker/breaker.tscn" id="2_8m0px"]
 [ext_resource type="Texture2D" uid="uid://mfu72xudsl27" path="res://asset_sprite/vase.png" id="3_8m0px"]
 [ext_resource type="Texture2D" uid="uid://b4pilmfqelfxf" path="res://asset_sprite/piedestale.png" id="4_hhbg7"]
@@ -9,6 +10,9 @@
 size = Vector2(116.778366, 236.1199)
 
 [node name="Level02" type="Node2D" unique_id=1696570743]
+script = ExtResource("1_hhbg7")
+life = 5
+use_protection = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457879473]
 position = Vector2(540.5, 958.5)
